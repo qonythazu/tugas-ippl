@@ -49,7 +49,11 @@ class _PesananReguler3State extends State<PesananReguler3> {
                       child: Text(
                         "Kain",
                         style:
-                            TextStyle(color: Color(0xff96CEB4), fontSize: 16),
+                            TextStyle(
+                              color: Color(0xff96CEB4), 
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600
+                            ),
                       ),
                     ),
                     ListTile(
@@ -150,7 +154,10 @@ class _DropdownButtonExampleState extends State<KainList> {
       value: dropdownValue,
       icon: const Icon(Icons.arrow_drop_down),
       elevation: 16,
-      style: const TextStyle(color: Color(0xffFFAD60)),
+      style: const TextStyle(
+        color: Color(0xffFFAD60),
+        fontFamily: "Montserrat"
+      ),
       underline: Container(
         height: 2,
         color: Color(0xffFFAD60),

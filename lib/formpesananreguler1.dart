@@ -183,7 +183,10 @@ class _DropdownButtonExampleState extends State<Jasa> {
       value: dropdownValue,
       icon: const Icon(Icons.arrow_drop_down),
       elevation: 16,
-      style: const TextStyle(color: Color(0xffFFAD60)),
+      style: const TextStyle(
+        color: Color(0xffFFAD60),
+        fontFamily: "Montserrat"
+      ),
       underline: Container(
         height: 2,
         color: Color(0xffFFAD60),

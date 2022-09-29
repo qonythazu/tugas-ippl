@@ -54,12 +54,10 @@ class _HomeState extends State<Home> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xffD9534F),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+        
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -74,12 +72,10 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xff96CEB4),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -94,12 +90,10 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xffFFAD60),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -135,12 +129,10 @@ class _HomeState extends State<Home> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xff96CEB4),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -155,12 +147,10 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xffFFAD60),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -175,12 +165,10 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xffD9534F),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -216,12 +204,10 @@ class _HomeState extends State<Home> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xffFFAD60),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -236,12 +222,10 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xffD9534F),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -256,12 +240,10 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: new EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                        color: Color(0xff96CEB4),
-                        borderRadius: BorderRadius.circular(8)),
-                    width: 160.0,
+                  ElevatedButton(
+                    onPressed: () {
+                      
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(

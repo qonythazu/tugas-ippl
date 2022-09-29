@@ -60,81 +60,12 @@ class _HomeState extends State<Home> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User A",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Kemeja",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffD9534F),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User B",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Celana",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xff96CEB4),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User C",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Celana",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffFFAD60),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  )
+                  // 0xffD9534F
+                  // 0xff96CEB4
+                  // 0xffFFAD60
+                  Notes(user : "User A", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
+                  Notes(user : "User B", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
+                  Notes(user : "User C", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
                 ],
               ),
             ),
@@ -156,81 +87,9 @@ class _HomeState extends State<Home> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User D",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Kemeja",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xff96CEB4),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User E",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Kemeja",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffFFAD60),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User F",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Celana",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffD9534F),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
+                  Notes(user : "User D", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
+                  Notes(user : "User E", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
+                  Notes(user : "User F", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
                 ],
               ),
             ),
@@ -252,81 +111,9 @@ class _HomeState extends State<Home> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User G",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Celana",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffFFAD60),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User H",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Kemeja",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffD9534F),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("User I",
-                                style: TextStyle(color: Colors.white)),
-                            Text("Celana",
-                                style: TextStyle(color: Colors.white)),
-                            Text("08xx-xxxx-67xx",
-                                style: TextStyle(color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xff96CEB4),
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(8.0))),
-                    ),
-                  ),
+                  Notes(user : "User H", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
+                  Notes(user : "User I", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
+                  Notes(user : "User J", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
                 ],
               ),
             )
@@ -351,6 +138,52 @@ class _HomeState extends State<Home> {
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
         onTap: null,
+      ),
+    );
+  }
+}
+
+class Notes extends StatelessWidget {
+  final String user;
+  final String kerjaan;
+  final String noHp;
+  final int warna;
+
+  const Notes({
+    Key? key,
+    required this.user,
+    required this.kerjaan,
+    required this.noHp,
+    required this.warna
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 4.0),
+      child: ElevatedButton(
+        onPressed: () {
+        
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(user, style: TextStyle(color: Colors.white)),
+              Text(kerjaan, style: TextStyle(color: Colors.white)),
+              Text(noHp,
+                  style: TextStyle(color: Colors.white)),
+            ],
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(warna),
+          shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(8.0)
+          )
+        ),
       ),
     );
   }

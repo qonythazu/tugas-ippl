@@ -86,17 +86,21 @@ class _PesananReguler3State extends State<PesananReguler3> {
                     ),
                     KainList(),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text("Panjang"),
-                        Slider(
-                          min: 1,
-                          max: 5,
-                          value: double.tryParse(panjangKain.text) ?? 1,
-                          onChanged: (val) {
-                            setState(() {
-                              panjangKain.text = val.round().toString();
-                            });
-                          },
+                        Container(
+                          width: MediaQuery.of(context).size.width / 2,
+                          child: Slider(
+                            min: 1,
+                            max: 5,
+                            value: double.tryParse(panjangKain.text) ?? 1,
+                            onChanged: (val) {
+                              setState(() {
+                                panjangKain.text = val.round().toString();
+                              });
+                            },
+                          ),
                         ),
                         Flexible(child: Text(panjangKain.text))
                       ],

@@ -1,5 +1,6 @@
 import 'package:anuy/formpesananreguler3.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -155,6 +156,9 @@ class _PesananReguler2State extends State<PesananReguler2> {
                         ),
                         TextField(
                           controller: null,
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly
+                          ],
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               prefixIcon: Icon(Icons.attach_money),

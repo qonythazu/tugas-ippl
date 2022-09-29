@@ -80,6 +80,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         const TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(

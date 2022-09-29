@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -78,6 +79,9 @@ class _PesananReguler1State extends State<PesananReguler1> {
                       ),
                       TextField(
                         controller: phone,
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.phone),

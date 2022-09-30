@@ -14,61 +14,170 @@ class _ProdukPageState extends State<ProdukPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(""),
+          title: const Text(""),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xffD9534F))
-      ),
+          iconTheme: IconThemeData(color: Color(0xffFFAD60))),
       body: Center(
         child: Column(
           children: [
-            Text("Produk"),
-            ElevatedButton.icon(
-              onPressed: () {}, 
-              icon: Icon(Icons.add), 
-              label: Text("")
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "Produk",
+                style: TextStyle(
+                    color: Color(0xffFFAD60),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600),
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {}, 
-              child: Column(
-                children: [
-                  Text("Celana"),
-                  Row(
-                    children: [
-                      Text("Dewasa"),
-                      Text("60k")
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text("Anak-anak"),
-                      Text("40k")
-                    ],
-                  )
-                ],
-              )
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.add,
+                  color: Color(0xff96CEB4),
+                ),
+                label: Text(""),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                ),
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {}, 
-              child: Column(
-                children: [
-                  Text("Kemeja"),
-                  Row(
-                    children: [
-                      Text("Dewasa"),
-                      Text("60k")
-                    ],
+            Container(
+              decoration:
+                  BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white
                   ),
-                  Row(
-                    children: [
-                      Text("Anak-anak"),
-                      Text("40k")
-                    ],
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Kemeja",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff96CEB4)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 4.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Dewasa",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              ),
+                              Spacer(),
+                              Text(
+                                "60k",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 4.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Anak-anak",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              ),
+                              Spacer(),
+                              Text(
+                                "40k",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   )
-                ],
-              )
-            )
-
+                ),
+            ),
+            Container(
+              decoration:
+                  BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white
+                  ),
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Celana",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff96CEB4)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 4.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Dewasa",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              ),
+                              Spacer(),
+                              Text(
+                                "60k",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 4.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Anak-anak",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              ),
+                              Spacer(),
+                              Text(
+                                "40k",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff96CEB4)),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ),
+            ),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:anuy/produk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -36,6 +37,12 @@ class _KustomState extends State<Kustom> {
                   BoxDecoration(border: Border.all(color: Color(0xffD9534F))),
               child: ElevatedButton(
                   onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ProdukPage()
+                      )
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -48,7 +55,7 @@ class _KustomState extends State<Kustom> {
                           Icons.tune,
                           color: Color(0xff96CEB4),
                         ),
-                        const Text("Jasa",
+                        const Text("Produk",
                             style: TextStyle(
                                 color: Color(0xffFFAD60), fontSize: 16)),
                         Spacer(),

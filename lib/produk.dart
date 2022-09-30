@@ -1,3 +1,4 @@
+import 'package:anuy/detailproduk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -56,10 +57,14 @@ class _ProdukPageState extends State<ProdukPage> {
               decoration:
                   BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white
-                  ),
-                  onPressed: () {},
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DetailProduk()));
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
@@ -79,15 +84,13 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Dewasa",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               ),
                               Spacer(),
                               Text(
                                 "60k",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               )
                             ],
                           ),
@@ -100,31 +103,27 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Anak-anak",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               ),
                               Spacer(),
                               Text(
                                 "40k",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               )
                             ],
                           ),
                         )
                       ],
                     ),
-                  )
-                ),
+                  )),
             ),
             Container(
               decoration:
                   BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white
-                  ),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.white),
                   onPressed: () {},
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -145,15 +144,13 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Dewasa",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               ),
                               Spacer(),
                               Text(
                                 "60k",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               )
                             ],
                           ),
@@ -166,23 +163,20 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Anak-anak",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               ),
                               Spacer(),
                               Text(
                                 "40k",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Color(0xff96CEB4)),
                               )
                             ],
                           ),
                         )
                       ],
                     ),
-                  )
-                ),
+                  )),
             ),
           ],
         ),

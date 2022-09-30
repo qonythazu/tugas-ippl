@@ -39,11 +39,9 @@ class _KustomState extends State<Kustom> {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ProdukPage()
-                      )
-                    );
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProdukPage()));
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -74,11 +72,9 @@ class _KustomState extends State<Kustom> {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const KainPage()
-                      )
-                    );
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const KainPage()));
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -103,8 +99,7 @@ class _KustomState extends State<Kustom> {
                         )
                       ],
                     ),
-                  )
-                ),
+                  )),
             ),
           ],
         ),

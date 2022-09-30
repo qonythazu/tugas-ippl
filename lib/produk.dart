@@ -1,3 +1,4 @@
+import 'package:anuy/addproduk.dart';
 import 'package:anuy/detailproduk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -39,7 +40,12 @@ class _ProdukPageState extends State<ProdukPage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AddProduk()));
+                    },
                     icon: Icon(
                       Icons.add,
                       color: Color(0xff96CEB4),

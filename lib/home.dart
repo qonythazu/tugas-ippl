@@ -1,3 +1,4 @@
+import 'package:anuy/kustomisasi.dart';
 import 'package:anuy/pilihpesanan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -29,11 +30,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(""),
+          title: const Text(""),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xff96CEB4))
-      ),
+          iconTheme: IconThemeData(color: Color(0xff96CEB4))),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -107,9 +107,21 @@ class HomeScreen extends StatelessWidget {
                 // 0xffD9534F
                 // 0xff96CEB4
                 // 0xffFFAD60
-                Notes(user : "User A", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
-                Notes(user : "User B", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
-                Notes(user : "User C", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
+                Notes(
+                    user: "User A",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xffD9534F),
+                Notes(
+                    user: "User B",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xff96CEB4),
+                Notes(
+                    user: "User C",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xffFFAD60),
               ],
             ),
           ),
@@ -131,9 +143,21 @@ class HomeScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                Notes(user : "User D", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
-                Notes(user : "User E", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
-                Notes(user : "User F", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
+                Notes(
+                    user: "User D",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xff96CEB4),
+                Notes(
+                    user: "User E",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xffFFAD60),
+                Notes(
+                    user: "User F",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xffD9534F),
               ],
             ),
           ),
@@ -155,9 +179,21 @@ class HomeScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                Notes(user : "User H", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
-                Notes(user : "User I", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
-                Notes(user : "User J", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
+                Notes(
+                    user: "User H",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xffFFAD60),
+                Notes(
+                    user: "User I",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xffD9534F),
+                Notes(
+                    user: "User J",
+                    kerjaan: "Kemeja",
+                    noHp: "08xx-xxxx-67xx",
+                    warna: 0xff96CEB4),
               ],
             ),
           )
@@ -180,84 +216,99 @@ class PengaturanScreen extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 16.0),
               child: Text(
                 "Pengaturan",
-                style: TextStyle(color: Color(0xff96CEB4), fontSize: 16, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    color: Color(0xff96CEB4),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600),
               ),
             ),
             Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Color(0xff96CEB4)
-                )
-              ),
+              decoration:
+                  BoxDecoration(border: Border.all(color: Color(0xff96CEB4))),
               child: ElevatedButton(
-                onPressed: () {}, 
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 8.0)
-                  
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.tune, color: Color(0xffFFAD60),),
-                      const Text("Kustomisasi", style: TextStyle(color: Color(0xffD9534F), fontSize: 16)),
-                      Spacer(),
-                      const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
-                    ],
-                  ),
-                )
-              ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Kustom()
+                      )
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 8.0)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.tune,
+                          color: Color(0xffFFAD60),
+                        ),
+                        const Text("Kustomisasi",
+                            style: TextStyle(
+                                color: Color(0xffD9534F), fontSize: 16)),
+                        Spacer(),
+                        const Icon(
+                          Icons.chevron_right,
+                          color: Color(0xff96CEB4),
+                        )
+                      ],
+                    ),
+                  )),
             ),
             Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Color(0xff96CEB4)
-                )
-              ),
+              decoration:
+                  BoxDecoration(border: Border.all(color: Color(0xff96CEB4))),
               child: ElevatedButton(
-                onPressed: () {}, 
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 8.0)
-                  
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.mail, color: Color(0xffFFAD60),),
-                      const Text("Email & Password", style: TextStyle(color: Color(0xffD9534F), fontSize: 16),),
-                      Spacer(),
-                      const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
-                    ],
-                  ),
-                )
-              ),
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 8.0)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.mail,
+                          color: Color(0xffFFAD60),
+                        ),
+                        const Text(
+                          "Email & Password",
+                          style:
+                              TextStyle(color: Color(0xffD9534F), fontSize: 16),
+                        ),
+                        Spacer(),
+                        const Icon(
+                          Icons.chevron_right,
+                          color: Color(0xff96CEB4),
+                        )
+                      ],
+                    ),
+                  )),
             ),
             Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Color(0xff96CEB4)
-                )
-              ),
+              decoration:
+                  BoxDecoration(border: Border.all(color: Color(0xff96CEB4))),
               child: ElevatedButton(
-                onPressed: () {}, 
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 8.0)
-                  
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.logout, color: Color(0xffFFAD60),),
-                      const Text("Logout", style: TextStyle(color: Color(0xffD9534F), fontSize: 16)),
-                    ],
-                  ),
-                )
-              ),
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 8.0)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.logout,
+                          color: Color(0xffFFAD60),
+                        ),
+                        const Text("Logout",
+                            style: TextStyle(
+                                color: Color(0xffD9534F), fontSize: 16)),
+                      ],
+                    ),
+                  )),
             )
           ],
         ),
@@ -272,22 +323,20 @@ class Notes extends StatelessWidget {
   final String noHp;
   final int warna;
 
-  const Notes({
-    Key? key,
-    required this.user,
-    required this.kerjaan,
-    required this.noHp,
-    required this.warna
-  }) : super(key: key);
+  const Notes(
+      {Key? key,
+      required this.user,
+      required this.kerjaan,
+      required this.noHp,
+      required this.warna})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.0),
       child: ElevatedButton(
-        onPressed: () {
-        
-        },
+        onPressed: () {},
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -296,17 +345,14 @@ class Notes extends StatelessWidget {
             children: [
               Text(user, style: TextStyle(color: Colors.white)),
               Text(kerjaan, style: TextStyle(color: Colors.white)),
-              Text(noHp,
-                  style: TextStyle(color: Colors.white)),
+              Text(noHp, style: TextStyle(color: Colors.white)),
             ],
           ),
         ),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color(warna),
-          shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(8.0)
-          )
-        ),
+            backgroundColor: Color(warna),
+            shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(8.0))),
       ),
     );
   }

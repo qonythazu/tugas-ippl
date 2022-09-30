@@ -11,16 +11,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
+
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-    ),
-    Text('Index 1: Business'),
-    Text(
-      'Index 2: School',
-    ),
+    PemasukkanScreen(),
+    HomeScreen(),
+    PengaturanScreen(),
   ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,84 +46,7 @@ class _HomeState extends State<Home> {
         child: const Icon(Icons.add),
         backgroundColor: Color(0xffD9534F),
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Belum Dikerjakan",
-                style: TextStyle(color: Color(0xffD9534F)),
-              ),
-            ),
-            Divider(
-              color: Color(0xffD9534F),
-            ),
-            Container(
-              height: 80.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  // 0xffD9534F
-                  // 0xff96CEB4
-                  // 0xffFFAD60
-                  Notes(user : "User A", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
-                  Notes(user : "User B", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
-                  Notes(user : "User C", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
-              child: Text(
-                "Sedang Dikerjakan",
-                style: TextStyle(color: Color(0xff96CEB4)),
-              ),
-            ),
-            Container(
-              child: Divider(
-                color: Color(0xff96CEB4),
-              ),
-            ),
-            Container(
-              // margin: EdgeInsets.only(top: 20),
-              height: 80.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Notes(user : "User D", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
-                  Notes(user : "User E", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
-                  Notes(user : "User F", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
-              child: Text(
-                "Siap Diambil",
-                style: TextStyle(color: Color(0xffFFAD60)),
-              ),
-            ),
-            Container(
-              child: Divider(
-                color: Color(0xffFFAD60),
-              ),
-            ),
-            Container(
-              // margin: EdgeInsets.only(top: 20),
-              height: 80.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Notes(user : "User H", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
-                  Notes(user : "User I", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
-                  Notes(user : "User J", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -137,9 +64,115 @@ class _HomeState extends State<Home> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
-        onTap: null,
+        onTap: _onItemTapped,
       ),
     );
+  }
+}
+
+class PemasukkanScreen extends StatelessWidget {
+  const PemasukkanScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Belum Dikerjakan",
+              style: TextStyle(color: Color(0xffD9534F)),
+            ),
+          ),
+          Divider(
+            color: Color(0xffD9534F),
+          ),
+          Container(
+            height: 80.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                // 0xffD9534F
+                // 0xff96CEB4
+                // 0xffFFAD60
+                Notes(user : "User A", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
+                Notes(user : "User B", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
+                Notes(user : "User C", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
+            child: Text(
+              "Sedang Dikerjakan",
+              style: TextStyle(color: Color(0xff96CEB4)),
+            ),
+          ),
+          Container(
+            child: Divider(
+              color: Color(0xff96CEB4),
+            ),
+          ),
+          Container(
+            // margin: EdgeInsets.only(top: 20),
+            height: 80.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Notes(user : "User D", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
+                Notes(user : "User E", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
+                Notes(user : "User F", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
+            child: Text(
+              "Siap Diambil",
+              style: TextStyle(color: Color(0xffFFAD60)),
+            ),
+          ),
+          Container(
+            child: Divider(
+              color: Color(0xffFFAD60),
+            ),
+          ),
+          Container(
+            // margin: EdgeInsets.only(top: 20),
+            height: 80.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Notes(user : "User H", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffFFAD60),
+                Notes(user : "User I", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xffD9534F),
+                Notes(user : "User J", kerjaan : "Kemeja", noHp: "08xx-xxxx-67xx", warna : 0xff96CEB4),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class PengaturanScreen extends StatelessWidget {
+  const PengaturanScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
 

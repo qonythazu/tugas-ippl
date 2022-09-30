@@ -178,18 +178,23 @@ class PengaturanScreen extends StatelessWidget {
           children: [
             Text(
               "Pengaturan",
-            
+              style: TextStyle(color: Color(0xff96CEB4)),
             ),
             Container(
               margin: EdgeInsets.symmetric(vertical: 4.0),
               child: ElevatedButton(
                 onPressed: () {}, 
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 8.0)
+                  
+                ),
                 child: Row(
                   children: [
-                    const Icon(Icons.tune),
-                    const Text("Kustomisasi"),
+                    const Icon(Icons.tune, color: Color(0xffFFAD60),),
+                    const Text("Kustomisasi", style: TextStyle(color: Color(0xffD9534F))),
                     Spacer(),
-                    const Icon(Icons.chevron_right)
+                    const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
                   ],
                 )
               ),
@@ -198,12 +203,17 @@ class PengaturanScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 4.0),
               child: ElevatedButton(
                 onPressed: () {}, 
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 8.0)
+                  
+                ),
                 child: Row(
                   children: [
-                    const Icon(Icons.mail),
-                    const Text("Email & Password"),
+                    const Icon(Icons.mail, color: Color(0xffFFAD60),),
+                    const Text("Email & Password", style: TextStyle(color: Color(0xffD9534F)),),
                     Spacer(),
-                    const Icon(Icons.chevron_right)
+                    const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
                   ],
                 )
               ),
@@ -212,10 +222,15 @@ class PengaturanScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 4.0),
               child: ElevatedButton(
                 onPressed: () {}, 
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 8.0)
+                  
+                ),
                 child: Row(
                   children: [
-                    const Icon(Icons.logout),
-                    const Text("Logout"),
+                    const Icon(Icons.logout, color: Color(0xffFFAD60),),
+                    const Text("Logout", style: TextStyle(color: Color(0xffD9534F))),
                   ],
                 )
               ),

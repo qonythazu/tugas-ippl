@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class AddProduk extends StatefulWidget {
-  const AddProduk({super.key});
+class AddKain extends StatefulWidget {
+  const AddKain({super.key});
 
   @override
-  State<AddProduk> createState() => _AddProdukState();
+  State<AddKain> createState() => _AddKainState();
 }
 
-class _AddProdukState extends State<AddProduk> {
+class _AddKainState extends State<AddKain> {
   var nama = TextEditingController();
-  var adult = TextEditingController();
-  var kids = TextEditingController();
+  var price = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,7 @@ class _AddProdukState extends State<AddProduk> {
                             labelStyle: TextStyle(
                               color: Color(0xff96CEB4),
                             ),
-                            hintText: "Kemeja",
+                            hintText: "Katun",
                             focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                               width: 1,
@@ -59,31 +58,15 @@ class _AddProdukState extends State<AddProduk> {
                             ))),
                       ),
                       TextField(
-                        controller: adult,
+                        controller: price,
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.attach_money),
                             prefixIconColor: Color(0xff96CEB4),
-                            labelText: "Harga untuk Dewasa",
+                            labelText: "Harga",
                             labelStyle: TextStyle(
                               color: Color(0xff96CEB4),
                             ),
                             hintText: "60.000",
-                            focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                              width: 1,
-                              color: Color(0xff96CEB4),
-                            ))),
-                      ),
-                      TextField(
-                        controller: kids,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.attach_money),
-                            prefixIconColor: Color(0xff96CEB4),
-                            labelText: "Harga untuk Anak-anak",
-                            labelStyle: TextStyle(
-                              color: Color(0xff96CEB4),
-                            ),
-                            hintText: "40k",
                             focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                               width: 1,

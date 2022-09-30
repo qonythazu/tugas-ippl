@@ -1,3 +1,4 @@
+import 'package:anuy/addkain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -37,7 +38,12 @@ class _KainPageState extends State<KainPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AddKain()));
+                },
                 icon: Icon(
                   Icons.add,
                   color: Color(0xff96CEB4),

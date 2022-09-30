@@ -1,3 +1,4 @@
+import 'package:anuy/kain.dart';
 import 'package:anuy/produk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -71,7 +72,14 @@ class _KustomState extends State<Kustom> {
               decoration:
                   BoxDecoration(border: Border.all(color: Color(0xffD9534F))),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KainPage()
+                      )
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 8.0)),
@@ -95,7 +103,8 @@ class _KustomState extends State<Kustom> {
                         )
                       ],
                     ),
-                  )),
+                  )
+                ),
             ),
           ],
         ),

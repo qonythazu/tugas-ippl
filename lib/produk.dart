@@ -31,20 +31,26 @@ class _ProdukPageState extends State<ProdukPage> {
                     fontWeight: FontWeight.w600),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.add,
-                  color: Color(0xff96CEB4),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.add,
+                      color: Color(0xff96CEB4),
+                    ),
+                    label: Text(""),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                    ),
+                  ),
                 ),
-                label: Text(""),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                ),
-              ),
+              ],
             ),
             Container(
               decoration:

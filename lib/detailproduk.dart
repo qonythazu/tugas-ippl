@@ -84,45 +84,144 @@ class _DetailProdukState extends State<DetailProduk> {
               ),
             ),
             Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xffFFAD60)),
+                borderRadius: BorderRadius.circular(16)
+              ),
+              margin: EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 children: [
-                  Text("Ukuran yang diperlukan"),
-                  Row(
-                    children: [
-                      Container(
-                        child: Text("Bahu"),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Ukuran yang diperlukan",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff96CEB4)
                       ),
-                      Container(
-                        child: Text("Panjang Lengan"),
-                      )
-                    ],
+                    ),
                   ),
-                  Row(
-                    children: [
-                      Container(
-                        child: Text("Lingkar Dada"),
-                      ),
-                      Container(
-                        child: Text("Panjang Baju"),
-                      )
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xffD9534F),
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          child: Text(
+                            "Bahu",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xffD9534F),
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          child: Text(
+                            "Panjang Lengan",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14
+                            )
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xffD9534F),
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          child: Text(
+                            "Lingkar Dada",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14
+                            )
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xffD9534F),
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          child: Text(
+                            "Panjang Baju",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14
+                            )
+                          ),
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
             ),
-            Row(
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {}, 
-                  icon: Icon(Icons.delete), 
-                  label: Text("DELETE")
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {}, 
-                  icon: Icon(Icons.edit), 
-                  label: Text("EDIT")
-                )
-              ],
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 48.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0
+                    ),
+                    onPressed: () {}, 
+                    icon: Icon(
+                      Icons.delete, 
+                      color: Color(0xffD9534F),
+                    ), 
+                    label: Text(
+                      "DELETE",
+                      style: TextStyle(
+                        color: Color(0xffD9534F),
+                        fontSize: 16
+                      ),
+                    )
+                  ),
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0
+                    ),
+                    onPressed: () {}, 
+                    icon: Icon(
+                      Icons.edit,
+                      color: Color(0xffFFAD60),
+                    ), 
+                    label: Text(
+                      "EDIT",
+                      style: TextStyle(
+                        color: Color(0xffFFAD60),
+                        fontSize: 16
+                      ),
+                    )
+                  )
+                ],
+              ),
             )
           ],
         ),

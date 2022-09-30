@@ -172,7 +172,58 @@ class PengaturanScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Center(
+        child: Column(
+          children: [
+            Text(
+              "Pengaturan",
+            
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4.0),
+              child: ElevatedButton(
+                onPressed: () {}, 
+                child: Row(
+                  children: [
+                    const Icon(Icons.tune),
+                    const Text("Kustomisasi"),
+                    Spacer(),
+                    const Icon(Icons.chevron_right)
+                  ],
+                )
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4.0),
+              child: ElevatedButton(
+                onPressed: () {}, 
+                child: Row(
+                  children: [
+                    const Icon(Icons.mail),
+                    const Text("Email & Password"),
+                    Spacer(),
+                    const Icon(Icons.chevron_right)
+                  ],
+                )
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4.0),
+              child: ElevatedButton(
+                onPressed: () {}, 
+                child: Row(
+                  children: [
+                    const Icon(Icons.logout),
+                    const Text("Logout"),
+                  ],
+                )
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 

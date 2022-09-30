@@ -176,12 +176,19 @@ class PengaturanScreen extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            Text(
-              "Pengaturan",
-              style: TextStyle(color: Color(0xff96CEB4)),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16.0),
+              child: Text(
+                "Pengaturan",
+                style: TextStyle(color: Color(0xff96CEB4), fontSize: 16, fontWeight: FontWeight.w600),
+              ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 4.0),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color(0xff96CEB4)
+                )
+              ),
               child: ElevatedButton(
                 onPressed: () {}, 
                 style: ElevatedButton.styleFrom(
@@ -189,18 +196,25 @@ class PengaturanScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 8.0)
                   
                 ),
-                child: Row(
-                  children: [
-                    const Icon(Icons.tune, color: Color(0xffFFAD60),),
-                    const Text("Kustomisasi", style: TextStyle(color: Color(0xffD9534F))),
-                    Spacer(),
-                    const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.tune, color: Color(0xffFFAD60),),
+                      const Text("Kustomisasi", style: TextStyle(color: Color(0xffD9534F), fontSize: 16)),
+                      Spacer(),
+                      const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
+                    ],
+                  ),
                 )
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 4.0),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color(0xff96CEB4)
+                )
+              ),
               child: ElevatedButton(
                 onPressed: () {}, 
                 style: ElevatedButton.styleFrom(
@@ -208,18 +222,25 @@ class PengaturanScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 8.0)
                   
                 ),
-                child: Row(
-                  children: [
-                    const Icon(Icons.mail, color: Color(0xffFFAD60),),
-                    const Text("Email & Password", style: TextStyle(color: Color(0xffD9534F)),),
-                    Spacer(),
-                    const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.mail, color: Color(0xffFFAD60),),
+                      const Text("Email & Password", style: TextStyle(color: Color(0xffD9534F), fontSize: 16),),
+                      Spacer(),
+                      const Icon(Icons.chevron_right, color: Color(0xff96CEB4),)
+                    ],
+                  ),
                 )
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 4.0),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color(0xff96CEB4)
+                )
+              ),
               child: ElevatedButton(
                 onPressed: () {}, 
                 style: ElevatedButton.styleFrom(
@@ -227,11 +248,14 @@ class PengaturanScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 8.0)
                   
                 ),
-                child: Row(
-                  children: [
-                    const Icon(Icons.logout, color: Color(0xffFFAD60),),
-                    const Text("Logout", style: TextStyle(color: Color(0xffD9534F))),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.logout, color: Color(0xffFFAD60),),
+                      const Text("Logout", style: TextStyle(color: Color(0xffD9534F), fontSize: 16)),
+                    ],
+                  ),
                 )
               ),
             )

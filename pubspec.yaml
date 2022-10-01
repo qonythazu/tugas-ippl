@@ -1,5 +1,5 @@
-name: anuy
-description: A new Flutter project.
+name: SewNotes
+description: Sebuah aplikasi yang membantu para penjahit untuk melakukan pencatatan terhadap pesanan jahitan.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

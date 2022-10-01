@@ -1,7 +1,7 @@
-import 'package:anuy/detailpesanan.dart';
-import 'package:anuy/kustomisasi.dart';
-import 'package:anuy/pilihpesanan.dart';
-import 'package:anuy/togglebutton.dart';
+import 'package:SewNotes/detailpesanan.dart';
+import 'package:SewNotes/kustomisasi.dart';
+import 'package:SewNotes/pilihpesanan.dart';
+import 'package:SewNotes/togglebutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

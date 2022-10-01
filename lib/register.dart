@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:anuy/login.dart';
-import 'package:anuy/home.dart';
+import 'package:SewNotes/login.dart';
+import 'package:SewNotes/home.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});

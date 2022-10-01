@@ -1,10 +1,8 @@
-// ignore_for_file: unnecessary_new
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:anuy/register.dart';
-import 'package:anuy/home.dart';
+import 'package:SewNotes/register.dart';
+import 'package:SewNotes/home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

@@ -1,5 +1,5 @@
-import 'package:anuy/kain.dart';
-import 'package:anuy/produk.dart';
+import 'package:SewNotes/kain.dart';
+import 'package:SewNotes/produk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

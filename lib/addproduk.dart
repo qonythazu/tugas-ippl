@@ -13,6 +13,7 @@ class _AddProdukState extends State<AddProduk> {
   var nama = TextEditingController();
   var adult = TextEditingController();
   var kids = TextEditingController();
+  var size = [TextEditingController()];
 
   @override
   Widget build(BuildContext context) {
@@ -90,6 +91,45 @@ class _AddProdukState extends State<AddProduk> {
                               color: Color(0xff96CEB4),
                             ))),
                       ),
+                      Column(
+                        children: [
+                          for (var i = 0; i < size.length; ++i)
+                          TextField(
+                            controller: size[i],
+                            decoration: InputDecoration(
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    size.removeAt(i);
+                                  });
+                                }, 
+                                icon: const Icon(Icons.remove, color: Color(0xffD9534F),)
+                              ),
+                              prefixIcon: Icon(Icons.straighten),
+                              prefixIconColor: Color(0xff96CEB4),
+                              labelText: "Ukuran",
+                              labelStyle: TextStyle(
+                                color: Color(0xff96CEB4),
+                              ),
+                              hintText: "Bahu",
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 1,
+                                  color: Color(0xff96CEB4),
+                                )
+                              )
+                            ),
+                          )
+                        ],
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          setState(() {
+                            size.add(TextEditingController());
+                          });
+                        }, 
+                        child: const Text("Tambah Ukuran", style: TextStyle(color: Color(0xffD9534F)),)
+                      )
                     ],
                   )),
                   Padding(

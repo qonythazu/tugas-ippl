@@ -95,19 +95,23 @@ class _PemasukkanScreenState extends State<PemasukkanScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
         child: Center(
           child: Column(
             children: [
               Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Color(0xffFFAD60)
+                ),
                 child: ToggleButton(
                   width: 300.0,
                   height: 30.0,
-                  toggleBackgroundColor: Colors.white,
-                  toggleBorderColor: (Colors.grey[350])!,
-                  toggleColor: (Colors.indigo[900])!,
-                  activeTextColor: Colors.white,
-                  inactiveTextColor: Colors.grey,
+                  toggleBackgroundColor: Color(0xffFFAD60),
+                  toggleBorderColor: (Colors.white)!,
+                  toggleColor: (Colors.white)!,
+                  activeTextColor: Color(0xffFFAD60),
+                  inactiveTextColor: Colors.white,
                   leftDescription: 'Mingguan',
                   rightDescription: 'Bulanan',
                   onLeftToggleActive: () {
@@ -132,7 +136,139 @@ class PemasukkanMingguanScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Mingguan"),
+      child: Column(
+        children: [
+          Container(
+            height: 100,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Color(0xffFFAD60)
+            ),
+            child: Center(
+              child: Text(
+                "Rp 550,000",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w800
+                ),
+              )
+            )
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xffD9534F),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Kemeja",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 150,000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xff96CEB4),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Kemeja",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 100,000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xffD9534F),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Celana",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 150,000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xff96CEB4),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Celana",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 150,000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -143,7 +279,139 @@ class PemasukkanBulananScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Bulanan"),
+      child: Column(
+        children: [
+          Container(
+            height: 100,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Color(0xffFFAD60)
+            ),
+            child: Center(
+              child: Text(
+                "Rp 1,550,000",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w800
+                ),
+              )
+            )
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xffD9534F),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Minggu 1",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 750,000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xff96CEB4),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Minggu 2",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 250,000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xffD9534F),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Minggu 3",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 550,000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Color(0xff96CEB4),
+              borderRadius: BorderRadius.circular(8.0)
+            ),
+            child: Row(
+              children: [
+                Text(
+                  "Minggu 4",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Rp 0",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

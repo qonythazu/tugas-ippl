@@ -1,3 +1,4 @@
+import 'package:anuy/detailpesanan.dart';
 import 'package:anuy/kustomisasi.dart';
 import 'package:anuy/pilihpesanan.dart';
 import 'package:anuy/togglebutton.dart';
@@ -445,16 +446,19 @@ class HomeScreen extends StatelessWidget {
                 // 0xff96CEB4
                 // 0xffFFAD60
                 Notes(
+                    idPesanan: 1,
                     user: "User A",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
                     warna: 0xffD9534F),
                 Notes(
+                    idPesanan: 2,
                     user: "User B",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
                     warna: 0xff96CEB4),
                 Notes(
+                    idPesanan: 3,
                     user: "User C",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
@@ -481,16 +485,19 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 Notes(
+                    idPesanan: 4,
                     user: "User D",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
                     warna: 0xff96CEB4),
                 Notes(
+                    idPesanan: 5,
                     user: "User E",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
                     warna: 0xffFFAD60),
                 Notes(
+                    idPesanan: 6,
                     user: "User F",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
@@ -517,16 +524,19 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 Notes(
+                    idPesanan: 7,
                     user: "User H",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
                     warna: 0xffFFAD60),
                 Notes(
+                    idPesanan: 8,
                     user: "User I",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
                     warna: 0xffD9534F),
                 Notes(
+                    idPesanan: 9,
                     user: "User J",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
@@ -655,18 +665,20 @@ class PengaturanScreen extends StatelessWidget {
 }
 
 class Notes extends StatelessWidget {
+  final int idPesanan;
   final String user;
   final String kerjaan;
   final String noHp;
   final int warna;
-  
 
   const Notes(
       {Key? key,
+      required this.idPesanan,
       required this.user,
       required this.kerjaan,
       required this.noHp,
-      required this.warna})
+      required this.warna,
+      })
       : super(key: key);
 
   @override
@@ -674,7 +686,14 @@ class Notes extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailPesanan(idPesanan: idPesanan),
+            ),
+          );
+        },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(

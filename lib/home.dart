@@ -1,5 +1,6 @@
 import 'package:anuy/kustomisasi.dart';
 import 'package:anuy/pilihpesanan.dart';
+import 'package:anuy/togglebutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -75,7 +76,30 @@ class PemasukkanScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      padding: EdgeInsets.all(10.0),
+        child: Center(
+          child: Container(
+            child: ToggleButton(
+              width: 300.0,
+              height: 30.0,
+              toggleBackgroundColor: Colors.white,
+              toggleBorderColor: (Colors.grey[350])!,
+              toggleColor: (Colors.indigo[900])!,
+              activeTextColor: Colors.white,
+              inactiveTextColor: Colors.grey,
+              leftDescription: 'Mingguan',
+              rightDescription: 'Bulanan',
+              onLeftToggleActive: () {
+                print('left toggle activated');
+              },
+              onRightToggleActive: () {
+                print('right toggle activated');
+              },
+            ),
+          ),
+        ),
+    );
   }
 }
 

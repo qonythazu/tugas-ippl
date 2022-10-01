@@ -28,6 +28,18 @@ class _HomeState extends State<Home> {
     });
   }
 
+  int _bottomNavColor(int index) {
+    if (index == 0) {
+      return 0xffFFAD60;
+    } else if (index == 1) {
+      return 0xffD9534F;
+    } else if (index == 2) {
+      return 0xff96CEB4;
+    } else {
+      return 0xffffffff;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +77,7 @@ class _HomeState extends State<Home> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Color(_bottomNavColor(_selectedIndex)),
         onTap: _onItemTapped,
       ),
     );

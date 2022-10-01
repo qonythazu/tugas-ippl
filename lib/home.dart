@@ -71,34 +71,79 @@ class _HomeState extends State<Home> {
   }
 }
 
-class PemasukkanScreen extends StatelessWidget {
+class PemasukkanScreen extends StatefulWidget {
   const PemasukkanScreen({super.key});
+
+  @override
+  State<PemasukkanScreen> createState() => _PemasukkanScreenState();
+}
+
+class _PemasukkanScreenState extends State<PemasukkanScreen> {
+  int _selectedIndexPemasukkan = 0;
+
+  static const List<Widget> _widgetOptionsPemasukkan = <Widget>[
+    PemasukkanMingguanScreen(),
+    PemasukkanBulananScreen(),
+  ];
+
+  void _onItemTappedPemasukkan(int index) {
+    setState(() {
+      _selectedIndexPemasukkan = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10.0),
         child: Center(
-          child: Container(
-            child: ToggleButton(
-              width: 300.0,
-              height: 30.0,
-              toggleBackgroundColor: Colors.white,
-              toggleBorderColor: (Colors.grey[350])!,
-              toggleColor: (Colors.indigo[900])!,
-              activeTextColor: Colors.white,
-              inactiveTextColor: Colors.grey,
-              leftDescription: 'Mingguan',
-              rightDescription: 'Bulanan',
-              onLeftToggleActive: () {
-                print('left toggle activated');
-              },
-              onRightToggleActive: () {
-                print('right toggle activated');
-              },
-            ),
+          child: Column(
+            children: [
+              Container(
+                child: ToggleButton(
+                  width: 300.0,
+                  height: 30.0,
+                  toggleBackgroundColor: Colors.white,
+                  toggleBorderColor: (Colors.grey[350])!,
+                  toggleColor: (Colors.indigo[900])!,
+                  activeTextColor: Colors.white,
+                  inactiveTextColor: Colors.grey,
+                  leftDescription: 'Mingguan',
+                  rightDescription: 'Bulanan',
+                  onLeftToggleActive: () {
+                    _onItemTappedPemasukkan(0);
+                  },
+                  onRightToggleActive: () {
+                    _onItemTappedPemasukkan(1);
+                  },
+                ),
+              ),
+              _widgetOptionsPemasukkan.elementAt(_selectedIndexPemasukkan),
+            ],
           ),
         ),
+    );
+  }
+}
+
+class PemasukkanMingguanScreen extends StatelessWidget {
+  const PemasukkanMingguanScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("Mingguan"),
+    );
+  }
+}
+
+class PemasukkanBulananScreen extends StatelessWidget {
+  const PemasukkanBulananScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("Bulanan"),
     );
   }
 }

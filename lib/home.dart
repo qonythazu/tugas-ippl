@@ -659,6 +659,7 @@ class Notes extends StatelessWidget {
   final String kerjaan;
   final String noHp;
   final int warna;
+  
 
   const Notes(
       {Key? key,

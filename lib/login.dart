@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,6 +13,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,51 +38,20 @@ class _LoginState extends State<Login> {
                 Flexible(
                   child: Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child: Column(
-                      children: <Widget>[
-                        const TextField(
-                          decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xffFFAD60),
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(50),
-                                bottomRight: Radius.circular(50),
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xffFFAD60),
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(50),
-                                bottomRight: Radius.circular(50),
-                              ),
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xffFFAD60),
-                              ),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(50),
-                                bottomRight: Radius.circular(50),
-                              ),
-                            ),
-                            filled: true,
-                            hintStyle: TextStyle(color: Colors.white),
-                            hintText: "email",
-                            fillColor: Color(0xffFFAD60),
-                          ),
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        const TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        children: <Widget>[
+                          TextFormField(
+                            validator: (email) {
+                              if (email != null && EmailValidator.validate(email)) {
+                                return null;
+                              }
+                              return "Invalid email address";
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            textInputAction: TextInputAction.next,
+                            decoration: const InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0xffFFAD60),
@@ -101,46 +73,88 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xffFFAD60)),
+                                borderSide: BorderSide(
+                                  color: Color(0xffFFAD60),
+                                ),
                                 borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(50),
-                                    bottomRight: Radius.circular(50)),
+                                  topRight: Radius.circular(50),
+                                  bottomRight: Radius.circular(50),
+                                ),
                               ),
                               filled: true,
                               hintStyle: TextStyle(color: Colors.white),
-                              hintText: "password",
-                              fillColor: Color(0xffFFAD60)),
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              "Don't have an account? ",
-                              style: TextStyle(
-                                fontSize: 10,
-                              ),
+                              hintText: "email",
+                              fillColor: Color(0xffFFAD60),
                             ),
-                            TextButton(
-                              child: const Text(
-                                "Sign Up",
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          const TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xffFFAD60),
+                                    width: 0.0,
+                                  ),
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(50),
+                                    bottomRight: Radius.circular(50),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xffFFAD60),
+                                    width: 0.0,
+                                  ),
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(50),
+                                    bottomRight: Radius.circular(50),
+                                  ),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xffFFAD60)),
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(50),
+                                      bottomRight: Radius.circular(50)),
+                                ),
+                                filled: true,
+                                hintStyle: TextStyle(color: Colors.white),
+                                hintText: "password",
+                                fillColor: Color(0xffFFAD60)),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "Don't have an account? ",
                                 style: TextStyle(
                                   fontSize: 10,
                                 ),
                               ),
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const Register(),
+                              TextButton(
+                                child: const Text(
+                                  "Sign Up",
+                                  style: TextStyle(
+                                    fontSize: 10,
                                   ),
-                                );
-                              },
-                            ),
-                          ],
-                        )
-                      ],
+                                ),
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Register(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -1,4 +1,4 @@
-import 'package:SewNotes/login.dart';
+import 'package:sewnotes/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {

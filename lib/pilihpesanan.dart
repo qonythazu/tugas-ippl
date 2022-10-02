@@ -1,5 +1,5 @@
-import 'package:SewNotes/formpesanankecil.dart';
-import 'package:SewNotes/formpesananreguler1.dart';
+import 'package:sewnotes/formpesanankecil.dart';
+import 'package:sewnotes/formpesananreguler1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

@@ -3,8 +3,8 @@ import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:SewNotes/login.dart';
-import 'package:SewNotes/home.dart';
+import 'package:sewnotes/login.dart';
+import 'package:sewnotes/home.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});

@@ -1,7 +1,7 @@
-import 'package:SewNotes/detailpesanan.dart';
-import 'package:SewNotes/kustomisasi.dart';
-import 'package:SewNotes/pilihpesanan.dart';
-import 'package:SewNotes/togglebutton.dart';
+import 'package:sewnotes/detailpesanan.dart';
+import 'package:sewnotes/kustomisasi.dart';
+import 'package:sewnotes/pilihpesanan.dart';
+import 'package:sewnotes/togglebutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

@@ -1,5 +1,5 @@
-import 'package:SewNotes/addproduk.dart';
-import 'package:SewNotes/detailproduk.dart';
+import 'package:sewnotes/addproduk.dart';
+import 'package:sewnotes/detailproduk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

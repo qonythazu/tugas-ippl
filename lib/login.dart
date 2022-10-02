@@ -1,4 +1,5 @@
 import 'package:email_validator/email_validator.dart';
+import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -14,6 +15,8 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
+  var emaillogin = TextEditingController();
+  var passwordlogin = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +46,7 @@ class _LoginState extends State<Login> {
                       child: Column(
                         children: <Widget>[
                           TextFormField(
+                            controller: emaillogin,
                             validator: (email) {
                               if (email != null && EmailValidator.validate(email)) {
                                 return null;
@@ -90,7 +94,14 @@ class _LoginState extends State<Login> {
                               color: Colors.white,
                             ),
                           ),
-                          const TextField(
+                          TextFormField(
+                            controller: passwordlogin,
+                            validator: (password) {
+                              if (password != null) {
+                                return null;
+                              }
+                              return "Input your password coy!";
+                            },
                             obscureText: true,
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(

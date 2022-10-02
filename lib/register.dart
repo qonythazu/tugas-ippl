@@ -1,3 +1,5 @@
+import 'package:email_validator/email_validator.dart';
+import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,6 +14,10 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  var emailregis = TextEditingController();
+  var passwordregis = TextEditingController();
+  var confirmpasswordregis = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +43,16 @@ class _RegisterState extends State<Register> {
                     padding: const EdgeInsets.only(right: 10),
                     child: Column(
                       children: <Widget>[
-                        const TextField(
+                        TextFormField(
+                          controller: confirmpasswordregis,
+                          validator: (email) {
+                            if (email != null && EmailValidator.validate(email)) {
+                              return null;
+                            }
+                            return "Invalid email address";
+                          },
+                          keyboardType: TextInputType.emailAddress,
+                          textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -77,7 +92,14 @@ class _RegisterState extends State<Register> {
                             color: Colors.white,
                           ),
                         ),
-                        const TextField(
+                        TextFormField(
+                          controller: passwordregis,
+                          validator: (password) {
+                            if (password != null) {
+                              return null;
+                            }
+                            return "Input your password coy!";
+                          },
                           obscureText: true,
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
@@ -113,7 +135,14 @@ class _RegisterState extends State<Register> {
                               fillColor: Color(0xff96CEB4)),
                           style: TextStyle(color: Colors.white),
                         ),
-                        const TextField(
+                        TextFormField(
+                          controller: confirmpasswordregis,
+                          validator: (password) {
+                            if (password != null) {
+                              return null;
+                            }
+                            return "Input your password coy!";
+                          },
                           obscureText: true,
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(

@@ -112,32 +112,50 @@ class _DetailPesananState extends State<DetailPesanan> {
               Spacer(),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 40.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                child: Column(
                   children: [
                     ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
-                        elevation: 0
+                        elevation: 0,
+                        padding: EdgeInsets.symmetric(vertical: 16.0)
                       ),
                       onPressed: () {
 
                       }, 
-                      icon: const Icon(Icons.delete, color: Color(0xffD9534F),), 
-                      label: const Text("DELETE", style: TextStyle(color: Color(0xffD9534F)),)
+                      icon: Icon(Icons.change_history, color: Color(0xff96CEB4),), 
+                      label: const Text("CHANGE STATUS", style: TextStyle(color: Color(0xff96CEB4)),)
                     ),
-                     ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent,
-                        elevation: 0
-                      ),
-                      onPressed: () {
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                            padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0)
+                          ),
+                          onPressed: () {
 
-                      }, 
-                      icon: const Icon(Icons.edit, color: Color(0xffFFAD60),), 
-                      label: const Text("EDIT", style: TextStyle(color: Color(0xffFFAD60)),)
-                    )
+                          }, 
+                          icon: const Icon(Icons.delete, color: Color(0xffD9534F),), 
+                          label: const Text("DELETE", style: TextStyle(color: Color(0xffD9534F)),)
+                        ),
+                         ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                            padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0)
+                          ),
+                          onPressed: () {
+
+                          }, 
+                          icon: const Icon(Icons.edit, color: Color(0xffFFAD60),), 
+                          label: const Text("EDIT", style: TextStyle(color: Color(0xffFFAD60)),)
+                        )
+                      ],
+                    ),
                   ],
                 ),
               )

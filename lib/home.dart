@@ -28,26 +28,13 @@ class _HomeState extends State<Home> {
     });
   }
 
-  int _bottomNavColor(int index) {
-    if (index == 0) {
-      return 0xffFFAD60;
-    } else if (index == 1) {
-      return 0xffD9534F;
-    } else if (index == 2) {
-      return 0xff96CEB4;
-    } else {
-      return 0xffffffff;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: const Text(""),
           backgroundColor: Colors.transparent,
-          elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xff96CEB4))),
+          elevation: 0,),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -57,8 +44,8 @@ class _HomeState extends State<Home> {
             ),
           );
         },
-        child: const Icon(Icons.add),
-        backgroundColor: Color(0xffD9534F),
+        child: const Icon(Icons.add, color: Color(0xffDFCDC3),),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
@@ -77,8 +64,9 @@ class _HomeState extends State<Home> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(_bottomNavColor(_selectedIndex)),
+        selectedItemColor: Theme.of(context).primaryColor,
         onTap: _onItemTapped,
+        backgroundColor: Color(0xffDFCDC3),
       ),
     );
   }
@@ -115,16 +103,16 @@ class _PemasukkanScreenState extends State<PemasukkanScreen> {
                 width: double.infinity,
                 padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: Color(0xffFFAD60)
+                  color: Theme.of(context).primaryColor
                 ),
                 child: ToggleButton(
                   width: 300.0,
                   height: 30.0,
-                  toggleBackgroundColor: Color(0xffFFAD60),
-                  toggleBorderColor: Colors.white,
-                  toggleColor: Colors.white,
-                  activeTextColor: Color(0xffFFAD60),
-                  inactiveTextColor: Colors.white,
+                  toggleBackgroundColor: Theme.of(context).primaryColor,
+                  toggleBorderColor: Color(0xffDFCDC3),
+                  toggleColor: Color(0xffDFCDC3),
+                  activeTextColor: Theme.of(context).primaryColor,
+                  inactiveTextColor: Color(0xffDFCDC3),
                   leftDescription: 'Mingguan',
                   rightDescription: 'Bulanan',
                   onLeftToggleActive: () {
@@ -155,13 +143,13 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             height: 100,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Color(0xffFFAD60)
+              color: Theme.of(context).primaryColor
             ),
             child: Center(
               child: Text(
                 "Rp 550,000",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Color(0xffDFCDC3),
                   fontSize: 32,
                   fontWeight: FontWeight.w800
                 ),
@@ -172,7 +160,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xffD9534F),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -180,7 +168,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Kemeja",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -189,7 +177,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Rp 150,000",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )
@@ -200,7 +188,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xff96CEB4),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -208,7 +196,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Kemeja",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -217,7 +205,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Rp 100,000",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )
@@ -228,7 +216,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xffD9534F),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -236,7 +224,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Celana",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -245,7 +233,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Rp 150,000",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )
@@ -256,7 +244,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xff96CEB4),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -264,7 +252,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Celana",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -273,7 +261,7 @@ class PemasukkanMingguanScreen extends StatelessWidget {
                 Text(
                   "Rp 150,000",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )
@@ -298,13 +286,13 @@ class PemasukkanBulananScreen extends StatelessWidget {
             height: 100,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Color(0xffFFAD60)
+              color: Theme.of(context).primaryColor
             ),
             child: Center(
               child: Text(
                 "Rp 1,550,000",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Color(0xffDFCDC3),
                   fontSize: 32,
                   fontWeight: FontWeight.w800
                 ),
@@ -315,7 +303,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xffD9534F),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -323,7 +311,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Minggu 1",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -332,7 +320,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Rp 750,000",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )
@@ -343,7 +331,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xff96CEB4),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -351,7 +339,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Minggu 2",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -360,7 +348,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Rp 250,000",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )
@@ -371,7 +359,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xffD9534F),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -379,7 +367,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Minggu 3",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -388,7 +376,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Rp 550,000",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )
@@ -399,7 +387,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Color(0xff96CEB4),
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(8.0)
             ),
             child: Row(
@@ -407,7 +395,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Minggu 4",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),
@@ -416,7 +404,7 @@ class PemasukkanBulananScreen extends StatelessWidget {
                 Text(
                   "Rp 0",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xffDFCDC3),
                     fontSize: 16
                   ),
                 )

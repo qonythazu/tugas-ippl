@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Anuy',
       theme: ThemeData(
-        primarySwatch: buildMaterialColor(const Color(0xffd1512d)),
-        scaffoldBackgroundColor: buildMaterialColor(const Color(0xffffffff)),
+        primarySwatch: buildMaterialColor(const Color(0xff3C4245)),
+        scaffoldBackgroundColor: buildMaterialColor(const Color(0xffDFCDC3)),
         fontFamily: 'Montserrat',
       ),
       home: const Login(),

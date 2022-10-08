@@ -19,7 +19,7 @@ class _ProdukPageState extends State<ProdukPage> {
           title: const Text(""),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xffFFAD60))),
+          iconTheme: IconThemeData(color: Theme.of(context).primaryColor)),
       body: Center(
         child: Column(
           children: [
@@ -28,7 +28,7 @@ class _ProdukPageState extends State<ProdukPage> {
               child: Text(
                 "Produk",
                 style: TextStyle(
-                    color: Color(0xffFFAD60),
+                    color: Theme.of(context).primaryColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w600),
               ),
@@ -48,7 +48,7 @@ class _ProdukPageState extends State<ProdukPage> {
                     },
                     icon: Icon(
                       Icons.add,
-                      color: Color(0xff96CEB4),
+                      color: Theme.of(context).primaryColor,
                     ),
                     label: Text(""),
                     style: ElevatedButton.styleFrom(
@@ -61,7 +61,7 @@ class _ProdukPageState extends State<ProdukPage> {
             ),
             Container(
               decoration:
-                  BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
+                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.white),
@@ -80,7 +80,7 @@ class _ProdukPageState extends State<ProdukPage> {
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xff96CEB4)),
+                              color: Theme.of(context).primaryColor),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -90,13 +90,13 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Dewasa",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               ),
                               Spacer(),
                               Text(
                                 "60k",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               )
                             ],
                           ),
@@ -109,13 +109,13 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Anak-anak",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               ),
                               Spacer(),
                               Text(
                                 "40k",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               )
                             ],
                           ),
@@ -126,7 +126,7 @@ class _ProdukPageState extends State<ProdukPage> {
             ),
             Container(
               decoration:
-                  BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
+                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.white),
@@ -140,7 +140,7 @@ class _ProdukPageState extends State<ProdukPage> {
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xff96CEB4)),
+                              color: Theme.of(context).primaryColor),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -150,13 +150,13 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Dewasa",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               ),
                               Spacer(),
                               Text(
                                 "60k",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               )
                             ],
                           ),
@@ -169,13 +169,13 @@ class _ProdukPageState extends State<ProdukPage> {
                               Text(
                                 "Anak-anak",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               ),
                               Spacer(),
                               Text(
                                 "40k",
                                 style: TextStyle(
-                                    fontSize: 16, color: Color(0xff96CEB4)),
+                                    fontSize: 16, color: Theme.of(context).primaryColor),
                               )
                             ],
                           ),

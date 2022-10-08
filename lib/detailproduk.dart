@@ -17,7 +17,7 @@ class _DetailProdukState extends State<DetailProduk> {
           title: const Text(""),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xffD9534F))),
+          iconTheme: IconThemeData(color: Theme.of(context).primaryColor)),
       body: Center(
         child: Column(
           children: [
@@ -26,7 +26,7 @@ class _DetailProdukState extends State<DetailProduk> {
               child: Text(
                 "Keterangan Produk",
                 style: TextStyle(
-                    color: Color(0xffD9534F),
+                    color: Theme.of(context).primaryColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w600),
               ),
@@ -40,7 +40,7 @@ class _DetailProdukState extends State<DetailProduk> {
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xff96CEB4)),
+                        color: Theme.of(context).primaryColor),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
@@ -50,13 +50,13 @@ class _DetailProdukState extends State<DetailProduk> {
                         Text(
                           "Dewasa",
                           style:
-                              TextStyle(fontSize: 16, color: Color(0xff96CEB4)),
+                              TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
                         ),
                         Spacer(),
                         Text(
                           "60k",
                           style:
-                              TextStyle(fontSize: 16, color: Color(0xff96CEB4)),
+                              TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
                         )
                       ],
                     ),
@@ -69,13 +69,13 @@ class _DetailProdukState extends State<DetailProduk> {
                         Text(
                           "Anak-anak",
                           style:
-                              TextStyle(fontSize: 16, color: Color(0xff96CEB4)),
+                              TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
                         ),
                         Spacer(),
                         Text(
                           "40k",
                           style:
-                              TextStyle(fontSize: 16, color: Color(0xff96CEB4)),
+                              TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
                         )
                       ],
                     ),
@@ -85,7 +85,7 @@ class _DetailProdukState extends State<DetailProduk> {
             ),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xffFFAD60)),
+                border: Border.all(color: Theme.of(context).primaryColor),
                 borderRadius: BorderRadius.circular(16)
               ),
               margin: EdgeInsets.symmetric(horizontal: 16.0),
@@ -98,7 +98,7 @@ class _DetailProdukState extends State<DetailProduk> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xff96CEB4)
+                        color: Theme.of(context).primaryColor
                       ),
                     ),
                   ),
@@ -110,7 +110,7 @@ class _DetailProdukState extends State<DetailProduk> {
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
-                            color: Color(0xffD9534F),
+                            color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(8)
                           ),
                           child: Text(
@@ -124,7 +124,7 @@ class _DetailProdukState extends State<DetailProduk> {
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
-                            color: Color(0xffD9534F),
+                            color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(8)
                           ),
                           child: Text(
@@ -146,7 +146,7 @@ class _DetailProdukState extends State<DetailProduk> {
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
-                            color: Color(0xffD9534F),
+                            color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(8)
                           ),
                           child: Text(
@@ -160,7 +160,7 @@ class _DetailProdukState extends State<DetailProduk> {
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
-                            color: Color(0xffD9534F),
+                            color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(8)
                           ),
                           child: Text(
@@ -192,12 +192,12 @@ class _DetailProdukState extends State<DetailProduk> {
                     onPressed: () {}, 
                     icon: Icon(
                       Icons.delete, 
-                      color: Color(0xffD9534F),
+                      color: Theme.of(context).primaryColor,
                     ), 
                     label: Text(
                       "DELETE",
                       style: TextStyle(
-                        color: Color(0xffD9534F),
+                        color: Theme.of(context).primaryColor,
                         fontSize: 16
                       ),
                     )
@@ -210,12 +210,12 @@ class _DetailProdukState extends State<DetailProduk> {
                     onPressed: () {}, 
                     icon: Icon(
                       Icons.edit,
-                      color: Color(0xffFFAD60),
+                      color: Theme.of(context).primaryColor,
                     ), 
                     label: Text(
                       "EDIT",
                       style: TextStyle(
-                        color: Color(0xffFFAD60),
+                        color: Theme.of(context).primaryColor,
                         fontSize: 16
                       ),
                     )

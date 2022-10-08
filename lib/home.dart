@@ -431,38 +431,35 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               "Belum Dikerjakan",
-              style: TextStyle(color: Color(0xffD9534F)),
+              style: TextStyle(color: Theme.of(context).primaryColor),
             ),
           ),
           Divider(
-            color: Color(0xffD9534F),
+            color: Theme.of(context).primaryColor,
           ),
           Container(
             height: 80.0,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                // 0xffD9534F
-                // 0xff96CEB4
-                // 0xffFFAD60
                 Notes(
                     idPesanan: 1,
                     user: "User A",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xffD9534F),
+                    warna: 0xffc7dfc3),
                 Notes(
                     idPesanan: 2,
                     user: "User B",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xff96CEB4),
+                    warna: 0xffc7dfc3),
                 Notes(
                     idPesanan: 3,
                     user: "User C",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xffFFAD60),
+                    warna: 0xffc7dfc3),
               ],
             ),
           ),
@@ -470,12 +467,12 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
             child: Text(
               "Sedang Dikerjakan",
-              style: TextStyle(color: Color(0xff96CEB4)),
+              style: TextStyle(color: Theme.of(context).primaryColor),
             ),
           ),
           Container(
             child: Divider(
-              color: Color(0xff96CEB4),
+              color: Theme.of(context).primaryColor,
             ),
           ),
           Container(
@@ -489,19 +486,19 @@ class HomeScreen extends StatelessWidget {
                     user: "User D",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xff96CEB4),
+                    warna: 0xffffc3d5df),
                 Notes(
                     idPesanan: 5,
                     user: "User E",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xffFFAD60),
+                    warna: 0xffffc3d5df),
                 Notes(
                     idPesanan: 6,
                     user: "User F",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xffD9534F),
+                    warna: 0xffffc3d5df),
               ],
             ),
           ),
@@ -509,12 +506,12 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
             child: Text(
               "Siap Diambil",
-              style: TextStyle(color: Color(0xffFFAD60)),
+              style: TextStyle(color: Theme.of(context).primaryColor),
             ),
           ),
           Container(
             child: Divider(
-              color: Color(0xffFFAD60),
+              color: Theme.of(context).primaryColor,
             ),
           ),
           Container(
@@ -528,19 +525,19 @@ class HomeScreen extends StatelessWidget {
                     user: "User H",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xffFFAD60),
+                    warna: 0xffdbc3df),
                 Notes(
                     idPesanan: 8,
                     user: "User I",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xffD9534F),
+                    warna: 0xffdbc3df),
                 Notes(
                     idPesanan: 9,
                     user: "User J",
                     kerjaan: "Kemeja",
                     noHp: "08xx-xxxx-67xx",
-                    warna: 0xff96CEB4),
+                    warna: 0xffdbc3df),
               ],
             ),
           )
@@ -564,14 +561,14 @@ class PengaturanScreen extends StatelessWidget {
               child: Text(
                 "Pengaturan",
                 style: TextStyle(
-                    color: Color(0xff96CEB4),
+                    color: Theme.of(context).primaryColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w600),
               ),
             ),
             Container(
               decoration:
-                  BoxDecoration(border: Border.all(color: Color(0xff96CEB4))),
+                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -588,17 +585,17 @@ class PengaturanScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.tune,
-                          color: Color(0xffFFAD60),
+                          color: Theme.of(context).primaryColor,
                         ),
-                        const Text("Kustomisasi",
+                        Text("Kustomisasi",
                             style: TextStyle(
-                                color: Color(0xffD9534F), fontSize: 16)),
+                                color: Theme.of(context).primaryColor, fontSize: 16)),
                         Spacer(),
-                        const Icon(
+                        Icon(
                           Icons.chevron_right,
-                          color: Color(0xff96CEB4),
+                          color: Theme.of(context).primaryColor,
                         )
                       ],
                     ),
@@ -606,7 +603,7 @@ class PengaturanScreen extends StatelessWidget {
             ),
             Container(
               decoration:
-                  BoxDecoration(border: Border.all(color: Color(0xff96CEB4))),
+                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -616,19 +613,19 @@ class PengaturanScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.mail,
-                          color: Color(0xffFFAD60),
+                          color: Theme.of(context).primaryColor,
                         ),
-                        const Text(
+                        Text(
                           "Email & Password",
                           style:
-                              TextStyle(color: Color(0xffD9534F), fontSize: 16),
+                              TextStyle(color: Theme.of(context).primaryColor, fontSize: 16),
                         ),
                         Spacer(),
-                        const Icon(
+                        Icon(
                           Icons.chevron_right,
-                          color: Color(0xff96CEB4),
+                          color: Theme.of(context).primaryColor,
                         )
                       ],
                     ),
@@ -636,7 +633,7 @@ class PengaturanScreen extends StatelessWidget {
             ),
             Container(
               decoration:
-                  BoxDecoration(border: Border.all(color: Color(0xff96CEB4))),
+                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -646,13 +643,13 @@ class PengaturanScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.logout,
-                          color: Color(0xffFFAD60),
+                          color: Theme.of(context).primaryColor,
                         ),
-                        const Text("Logout",
+                        Text("Logout",
                             style: TextStyle(
-                                color: Color(0xffD9534F), fontSize: 16)),
+                                color: Theme.of(context).primaryColor, fontSize: 16)),
                       ],
                     ),
                   )),
@@ -686,6 +683,7 @@ class Notes extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.0),
       child: ElevatedButton(
+        
         onPressed: () {
           Navigator.push(
             context,
@@ -700,16 +698,21 @@ class Notes extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(user, style: TextStyle(color: Colors.white)),
-              Text(kerjaan, style: TextStyle(color: Colors.white)),
-              Text(noHp, style: TextStyle(color: Colors.white)),
+              Text(user, style: TextStyle(color: Theme.of(context).primaryColor)),
+              Text(kerjaan, style: TextStyle(color: Theme.of(context).primaryColor)),
+              Text(noHp, style: TextStyle(color: Theme.of(context).primaryColor)),
             ],
           ),
         ),
         style: ElevatedButton.styleFrom(
+            
             backgroundColor: Color(warna),
             shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(8.0))),
+                borderRadius: new BorderRadius.circular(8.0),
+                side: BorderSide(
+                  color: Theme.of(context).primaryColor
+                )
+                )),
       ),
     );
   }

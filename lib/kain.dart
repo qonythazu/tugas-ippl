@@ -18,7 +18,7 @@ class _KainPageState extends State<KainPage> {
           title: const Text(""),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xffFFAD60))),
+          iconTheme: IconThemeData(color: Theme.of(context).primaryColor)),
       body: Center(
           child: Column(children: [
         Padding(
@@ -26,7 +26,7 @@ class _KainPageState extends State<KainPage> {
           child: Text(
             "Kain",
             style: TextStyle(
-                color: Color(0xffFFAD60),
+                color: Theme.of(context).primaryColor,
                 fontSize: 16,
                 fontWeight: FontWeight.w600),
           ),
@@ -46,7 +46,7 @@ class _KainPageState extends State<KainPage> {
                 },
                 icon: Icon(
                   Icons.add,
-                  color: Color(0xff96CEB4),
+                  color: Theme.of(context).primaryColor,
                 ),
                 label: Text(""),
                 style: ElevatedButton.styleFrom(
@@ -59,7 +59,7 @@ class _KainPageState extends State<KainPage> {
         ),
         Container(
           decoration:
-              BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
+              BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -69,12 +69,12 @@ class _KainPageState extends State<KainPage> {
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xff96CEB4)),
+                      color: Theme.of(context).primaryColor),
                 ),
                 Spacer(),
                 Text(
                   "30k/meter",
-                  style: TextStyle(fontSize: 16, color: Color(0xff96CEB4)),
+                  style: TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -82,7 +82,7 @@ class _KainPageState extends State<KainPage> {
                     onPressed: () {},
                     child: Icon(
                       Icons.edit,
-                      color: Color(0xffFFAD60),
+                      color: Theme.of(context).primaryColor,
                     )),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -90,7 +90,7 @@ class _KainPageState extends State<KainPage> {
                     onPressed: () {},
                     child: Icon(
                       Icons.delete,
-                      color: Color(0xffD9534F),
+                      color: Theme.of(context).primaryColor,
                     ))
               ],
             ),
@@ -98,7 +98,7 @@ class _KainPageState extends State<KainPage> {
         ),
         Container(
           decoration:
-              BoxDecoration(border: Border.all(color: Color(0xffFFAD60))),
+              BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -108,12 +108,12 @@ class _KainPageState extends State<KainPage> {
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xff96CEB4)),
+                      color: Theme.of(context).primaryColor),
                 ),
                 Spacer(),
                 Text(
                   "30k/meter",
-                  style: TextStyle(fontSize: 16, color: Color(0xff96CEB4)),
+                  style: TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -121,7 +121,7 @@ class _KainPageState extends State<KainPage> {
                     onPressed: () {},
                     child: Icon(
                       Icons.edit,
-                      color: Color(0xffFFAD60),
+                      color: Theme.of(context).primaryColor,
                     )),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -129,7 +129,7 @@ class _KainPageState extends State<KainPage> {
                     onPressed: () {},
                     child: Icon(
                       Icons.delete,
-                      color: Color(0xffD9534F),
+                      color: Theme.of(context).primaryColor,
                     ))
               ],
             ),

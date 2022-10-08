@@ -19,7 +19,7 @@ class _KustomState extends State<Kustom> {
           title: const Text(""),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xffD9534F))),
+          iconTheme: IconThemeData(color: Theme.of(context).primaryColor)),
       body: Center(
         child: Column(
           children: [
@@ -28,14 +28,14 @@ class _KustomState extends State<Kustom> {
               child: Text(
                 "Kustomisasi",
                 style: TextStyle(
-                    color: Color(0xffD9534F),
+                    color: Theme.of(context).primaryColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w600),
               ),
             ),
             Container(
               decoration:
-                  BoxDecoration(border: Border.all(color: Color(0xffD9534F))),
+                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -50,17 +50,17 @@ class _KustomState extends State<Kustom> {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.tune,
-                          color: Color(0xff96CEB4),
+                          color: Theme.of(context).primaryColor,
                         ),
-                        const Text("Produk",
+                        Text("Produk",
                             style: TextStyle(
-                                color: Color(0xffFFAD60), fontSize: 16)),
+                                color: Theme.of(context).primaryColor, fontSize: 16)),
                         Spacer(),
-                        const Icon(
+                        Icon(
                           Icons.chevron_right,
-                          color: Color(0xffD9534F),
+                          color: Theme.of(context).primaryColor,
                         )
                       ],
                     ),
@@ -68,7 +68,7 @@ class _KustomState extends State<Kustom> {
             ),
             Container(
               decoration:
-                  BoxDecoration(border: Border.all(color: Color(0xffD9534F))),
+                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -83,19 +83,19 @@ class _KustomState extends State<Kustom> {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.tune,
-                          color: Color(0xff96CEB4),
+                          color: Theme.of(context).primaryColor,
                         ),
-                        const Text(
+                        Text(
                           "Kain",
                           style:
-                              TextStyle(color: Color(0xffFFAD60), fontSize: 16),
+                              TextStyle(color: Theme.of(context).primaryColor, fontSize: 16),
                         ),
                         Spacer(),
-                        const Icon(
+                        Icon(
                           Icons.chevron_right,
-                          color: Color(0xffD9534F),
+                          color: Theme.of(context).primaryColor,
                         )
                       ],
                     ),

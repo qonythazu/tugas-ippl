@@ -24,7 +24,7 @@ class _DetailPesananState extends State<DetailPesanan> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: Color(0xffFFAD60)),
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       ),
       body: Container(
           child: Center(
@@ -35,15 +35,17 @@ class _DetailPesananState extends State<DetailPesanan> {
               child: Text(
                 "Kemeja",
                 style: TextStyle(
-                    color: Color(0xffD9534F),
+                    color: Theme.of(context).primaryColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w600),
               ),
             ),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xffD9534F)),
-                  borderRadius: BorderRadius.circular(8)),
+                  border: Border.all(color: Theme.of(context).primaryColor),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white
+                  ),
               margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
               padding: EdgeInsets.all(8.0),
               child: Row(
@@ -52,20 +54,22 @@ class _DetailPesananState extends State<DetailPesanan> {
                 children: [
                   Text(
                     "Bahu",
-                    style: TextStyle(color: Color(0xffFFAD60)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   ),
                   Spacer(),
                   Text(
                     "20",
-                    style: TextStyle(color: Color(0xffD9534F)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   )
                 ],
               ),
             ),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xffD9534F)),
-                  borderRadius: BorderRadius.circular(8)),
+                  border: Border.all(color: Theme.of(context).primaryColor),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white
+                  ),
               margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
               padding: EdgeInsets.all(8.0),
               child: Row(
@@ -74,20 +78,22 @@ class _DetailPesananState extends State<DetailPesanan> {
                 children: [
                   Text(
                     "Panjang Lengan",
-                    style: TextStyle(color: Color(0xffFFAD60)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   ),
                   Spacer(),
                   Text(
                     "57",
-                    style: TextStyle(color: Color(0xffD9534F)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   )
                 ],
               ),
             ),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xffD9534F)),
-                  borderRadius: BorderRadius.circular(8)),
+                  border: Border.all(color: Theme.of(context).primaryColor),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white
+                  ),
               margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
               padding: EdgeInsets.all(8.0),
               child: Row(
@@ -96,20 +102,22 @@ class _DetailPesananState extends State<DetailPesanan> {
                 children: [
                   Text(
                     "Lingkar Dada",
-                    style: TextStyle(color: Color(0xffFFAD60)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   ),
                   Spacer(),
                   Text(
                     "90",
-                    style: TextStyle(color: Color(0xffD9534F)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   )
                 ],
               ),
             ),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xffD9534F)),
-                  borderRadius: BorderRadius.circular(8)),
+                  border: Border.all(color: Theme.of(context).primaryColor),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white
+                  ),
               margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
               padding: EdgeInsets.all(8.0),
               child: Row(
@@ -118,12 +126,12 @@ class _DetailPesananState extends State<DetailPesanan> {
                 children: [
                   Text(
                     "Panjang baju",
-                    style: TextStyle(color: Color(0xffFFAD60)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   ),
                   Spacer(),
                   Text(
                     "64",
-                    style: TextStyle(color: Color(0xffD9534F)),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   )
                 ],
               ),
@@ -145,13 +153,13 @@ class _DetailPesananState extends State<DetailPesanan> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 16.0, horizontal: 16.0)),
                           onPressed: () {},
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.delete,
-                            color: Color(0xffD9534F),
+                            color: Theme.of(context).primaryColor,
                           ),
-                          label: const Text(
+                          label: Text(
                             "DELETE",
-                            style: TextStyle(color: Color(0xffD9534F)),
+                            style: TextStyle(color: Theme.of(context).primaryColor),
                           )),
                       ElevatedButton.icon(
                           style: ElevatedButton.styleFrom(
@@ -160,13 +168,13 @@ class _DetailPesananState extends State<DetailPesanan> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 16.0, horizontal: 16.0)),
                           onPressed: () {},
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.edit,
-                            color: Color(0xffFFAD60),
+                            color: Theme.of(context).primaryColor,
                           ),
-                          label: const Text(
+                          label: Text(
                             "EDIT",
-                            style: TextStyle(color: Color(0xffFFAD60)),
+                            style: TextStyle(color: Theme.of(context).primaryColor),
                           ))
                     ],
                   ),
@@ -203,7 +211,7 @@ class DialogExample extends StatelessWidget {
                         onChanged: (Status? value) {
                           setState(() => _status = value);
                         },
-                        activeColor: Color(0xff96CEB4)),
+                        activeColor: Theme.of(context).primaryColor),
                   ),
                   ListTile(
                     title: const Text("Sedang Dikerjakan"),
@@ -213,7 +221,7 @@ class DialogExample extends StatelessWidget {
                         onChanged: (Status? value) {
                           setState(() => _status = value);
                         },
-                        activeColor: Color(0xff96CEB4)),
+                        activeColor: Theme.of(context).primaryColor),
                   ),
                   ListTile(
                     title: const Text("Siap Diambil"),
@@ -223,23 +231,23 @@ class DialogExample extends StatelessWidget {
                         onChanged: (Status? value) {
                           setState(() => _status = value);
                         },
-                        activeColor: Color(0xff96CEB4)),
+                        activeColor: Theme.of(context).primaryColor),
                   ),
                   Row(
                     children: [
                       TextButton(
                         onPressed: () => Navigator.pop(context, 'Cancel'),
-                        child: const Text(
+                        child: Text(
                           'Cancel',
-                          style: TextStyle(color: Color(0xffD9534F)),
+                          style: TextStyle(color: Theme.of(context).primaryColor),
                         ),
                       ),
                       const Spacer(),
                       TextButton(
                         onPressed: () => Navigator.pop(context, 'OK'),
-                        child: const Text(
+                        child: Text(
                           'OK',
-                          style: TextStyle(color: Color(0xffFFAD60)),
+                          style: TextStyle(color: Theme.of(context).primaryColor),
                         ),
                       ),
                     ],
@@ -250,13 +258,13 @@ class DialogExample extends StatelessWidget {
           ),
         ),
       ),
-      label: const Text(
+      label: Text(
         'CHANGE STATUS',
-        style: TextStyle(color: Color(0xff96CEB4)),
+        style: TextStyle(color: Theme.of(context).primaryColor),
       ),
       icon: Icon(
         Icons.change_history,
-        color: Color(0xff96CEB4),
+        color: Theme.of(context).primaryColor,
       ),
       style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,

@@ -23,77 +23,106 @@ class _PesananKecilState extends State<PesananKecil> {
         title: const Text(""),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: Color(0xffD9534F)),
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       ),
       body: Center(
-        child: Theme(
-            data: Theme.of(context).copyWith(
-                inputDecorationTheme:
-                    Theme.of(context).inputDecorationTheme.copyWith(
-              prefixIconColor:
-                  MaterialStateColor.resolveWith((Set<MaterialState> states) {
-                if (states.contains(MaterialState.focused)) {
-                  return Color(0xffD9534F);
-                }
-                return Colors.grey;
-              }),
-            )),
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 24.0),
-              child: Column(
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            children: [
+              Expanded(
+                  child: ListView(
                 children: [
-                  Expanded(
-                      child: ListView(
-                    children: [
-                      Text("Form Pemesanan"),
-                      TextField(
-                        controller: name,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.web), labelText: "Nama"),
-                      ),
-                      TextField(
-                        controller: phone,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.phone),
-                            labelText: "No. Telepon"),
-                      ),
-                      TextField(
-                        controller: order,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.shopping_cart),
-                            labelText: "Pesanan"),
-                      ),
-                      TextField(
-                        controller: fee,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.attach_money),
-                            labelText: "Biaya"),
-                      ),
-                      TextField(
-                        controller: notes,
-                        decoration: InputDecoration(labelText: "Notes"),
-                        minLines: 4,
-                        maxLines: null,
-                      )
-                    ],
-                  )),
+                  Text("Form Pemesanan"),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: const Text("save"),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0)),
-                          backgroundColor: Color(0xffFFAD60)),
+                    padding: const EdgeInsets.all(4.0),
+                    child: TextField(
+                      controller: name,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.web),
+                          labelText: "Nama",
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: "Rahman",
+                          hintStyle: TextStyle(
+                              color: Theme.of(context).primaryColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: TextField(
+                      controller: phone,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.phone),
+                          labelText: "No. Telp",
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: "08xxxxxxxx",
+                          hintStyle: TextStyle(
+                              color: Theme.of(context).primaryColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: TextField(
+                      controller: order,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.shopping_cart),
+                          labelText: "Pesanan",
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: "Celana Robek",
+                          hintStyle: TextStyle(
+                              color: Theme.of(context).primaryColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: TextField(
+                      controller: fee,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.attach_money),
+                          labelText: "Biaya",
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: "20k",
+                          hintStyle: TextStyle(
+                              color: Theme.of(context).primaryColor)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: TextField(
+                      controller: notes,
+                      decoration: InputDecoration(
+                          labelText: "Notes",
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintStyle: TextStyle(
+                              color: Theme.of(context).primaryColor)),
+                      minLines: 4,
+                      maxLines: null,
                     ),
                   )
                 ],
-              ),
-            )),
+              )),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 16.0),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: const Text("save"),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      shape: new RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0)),
+                      backgroundColor: Theme.of(context).primaryColor),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

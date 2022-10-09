@@ -24,115 +24,106 @@ class _PesananReguler3State extends State<PesananReguler3> {
           title: const Text(""),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xff96CEB4))),
+          iconTheme: IconThemeData(color: Theme.of(context).primaryColor)),
       body: Center(
-        child: Theme(
-            data: Theme.of(context).copyWith(
-                inputDecorationTheme:
-                    Theme.of(context).inputDecorationTheme.copyWith(
-              prefixIconColor:
-                  MaterialStateColor.resolveWith((Set<MaterialState> states) {
-                if (states.contains(MaterialState.focused)) {
-                  return Color(0xff96CEB4);
-                }
-                return Colors.grey;
-              }),
-            )),
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 24.0),
-              child: Column(children: [
-                Expanded(
-                    child: ListView(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        "Kain",
-                        style:
-                            TextStyle(
-                              color: Color(0xff96CEB4), 
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600
-                            ),
-                      ),
-                    ),
-                    ListTile(
-                      title: const Text(
-                        "Beli Sendiri",
-                        style: TextStyle(color: Color(0xffFFAD60)),
-                      ),
-                      leading: Radio<Kain>(
-                        value: Kain.belisendiri,
-                        groupValue: _character,
-                        onChanged: (Kain? value) {
-                          setState(() {
-                            _character = value;
-                          });
-                        },
-                        activeColor: Color(0xff96CEB4),
-                      ),
-                    ),
-                    ListTile(
-                      title: const Text(
-                        "Dibelikan",
-                        style: TextStyle(color: Color(0xffD9534F)),
-                      ),
-                      leading: Radio<Kain>(
-                        value: Kain.dibelikan,
-                        groupValue: _character,
-                        onChanged: (Kain? value) {
-                          setState(() {
-                            _character = value;
-                          });
-                        },
-                        activeColor: Color(0xff96CEB4),
-                      ),
-                    ),
-                    KainList(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("Panjang"),
-                        Container(
-                          width: MediaQuery.of(context).size.width / 2,
-                          child: Slider(
-                            min: 1,
-                            max: 5,
-                            value: double.tryParse(panjangKain.text) ?? 1,
-                            onChanged: (val) {
-                              setState(() {
-                                panjangKain.text = val.round().toString();
-                              });
-                            },
-                          ),
-                        ),
-                        Flexible(child: Text(panjangKain.text))
-                      ],
-                    ),
-                    TextField(
-                      controller: null,
-                      decoration: const InputDecoration(label: Text("Notes")),
-                      minLines: 4,
-                      maxLines: null,
-                    )
-                  ],
-                )),
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(children: [
+            Expanded(
+                child: ListView(
+              children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Text("save"),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        shape: new RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
-                        backgroundColor: Color(0xffFFAD60)),
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    "Kain",
+                    style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
-              ]),
+                ListTile(
+                  title: Text(
+                    "Beli Sendiri",
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
+                  leading: Radio<Kain>(
+                    value: Kain.belisendiri,
+                    groupValue: _character,
+                    onChanged: (Kain? value) {
+                      setState(() {
+                        _character = value;
+                      });
+                    },
+                    activeColor: Theme.of(context).primaryColor,
+                  ),
+                ),
+                ListTile(
+                  title: Text(
+                    "Dibelikan",
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
+                  leading: Radio<Kain>(
+                    value: Kain.dibelikan,
+                    groupValue: _character,
+                    onChanged: (Kain? value) {
+                      setState(() {
+                        _character = value;
+                      });
+                    },
+                    activeColor: Theme.of(context).primaryColor,
+                  ),
+                ),
+                KainList(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text("Panjang"),
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Slider(
+                        min: 1,
+                        max: 5,
+                        value: double.tryParse(panjangKain.text) ?? 1,
+                        onChanged: (val) {
+                          setState(() {
+                            panjangKain.text = val.round().toString();
+                          });
+                        },
+                      ),
+                    ),
+                    Flexible(child: Text(panjangKain.text))
+                  ],
+                ),
+                TextField(
+                  controller: null,
+                  decoration: InputDecoration(
+                      labelText: "Notes",
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintStyle:
+                          TextStyle(color: Theme.of(context).primaryColor)),
+                  minLines: 4,
+                  maxLines: null,
+                )
+              ],
             )),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("save"),
+                ),
+                style: ElevatedButton.styleFrom(
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    backgroundColor: Theme.of(context).primaryColor),
+              ),
+            ),
+          ]),
+        ),
       ),
     );
   }
@@ -154,13 +145,11 @@ class _DropdownButtonExampleState extends State<KainList> {
       value: dropdownValue,
       icon: const Icon(Icons.arrow_drop_down),
       elevation: 16,
-      style: const TextStyle(
-        color: Color(0xffFFAD60),
-        fontFamily: "Montserrat"
-      ),
+      style:
+          TextStyle(color: Theme.of(context).primaryColor, fontFamily: "Montserrat"),
       underline: Container(
         height: 2,
-        color: Color(0xffFFAD60),
+        color: Theme.of(context).primaryColor,
       ),
       onChanged: (String? value) {
         // This is called when the user selects an item.

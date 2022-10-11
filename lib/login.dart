@@ -7,7 +7,8 @@ import 'package:sewnotes/register.dart';
 import 'package:sewnotes/home.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  const Login({super.key, this.suffixIcon});
+  final List<Widget>? suffixIcon;
 
   @override
   State<Login> createState() => _LoginState();
@@ -17,135 +18,155 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   var emaillogin = TextEditingController();
   var passwordlogin = TextEditingController();
+  bool showPassword = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(right: 120, bottom: 30),
-              child: Text(
-                "Sign In",
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 40,
-                ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 120, bottom: 30),
+            child: Text(
+              "Sign In",
+              style: TextStyle(
+                color: Theme.of(context).primaryColor,
+                fontSize: 40,
               ),
             ),
-            Column(
-              children: <Widget>[
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
-                        child: TextFormField(
-                          controller: emaillogin,
-                          validator: (email) {
-                            if (email != null &&
-                                EmailValidator.validate(email)) {
-                              return null;
-                            }
-                            return "Invalid email address";
-                          },
-                          keyboardType: TextInputType.emailAddress,
-                          textInputAction: TextInputAction.next,
-                          decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.email),
-                              labelText: "Email",
-                              filled: true,
-                              fillColor: Colors.white,
-                              hintText: "example@gmail.com",
-                              hintStyle: TextStyle(
-                                  color: Theme.of(context).primaryColor)),
-                          style: const TextStyle(
-                            color: Colors.white,
-                          ),
+          ),
+          Column(
+            children: <Widget>[
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                      child: TextFormField(
+                        controller: emaillogin,
+                        validator: (email) {
+                          if (email != null &&
+                              EmailValidator.validate(email)) {
+                            return null;
+                          }
+                          return "Invalid email address";
+                        },
+                        keyboardType: TextInputType.emailAddress,
+                        textInputAction: TextInputAction.next,
+                        decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.email),
+                            labelText: "Email",
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: "example@gmail.com",
+                            hintStyle: TextStyle(
+                                color: Theme.of(context).primaryColor)),
+                        style: TextStyle(
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
-                        child: TextFormField(
-                          controller: passwordlogin,
-                          validator: (password) {
-                            if (password != null) {
-                              return null;
-                            }
-                            return "Input your password coy!";
-                          },
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.lock),
-                              labelText: "Password",
-                              filled: true,
-                              fillColor: Colors.white,
-                              hintStyle: TextStyle(
-                                  color: Theme.of(context).primaryColor)),
-                          style: TextStyle(color: Theme.of(context).primaryColor),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Home(),
-                              ),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                      child: TextFormField(
+                        controller: passwordlogin,
+                        validator: (password) {
+                          if (password != null) {
+                            return null;
+                          }
+                          return "Input your password coy!";
+                        },
+                        decoration: InputDecoration(
+                            suffixIcon: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Builder(builder: (context){
+                                    if (showPassword) {
+                                      return const Icon(Icons.visibility_off);
+                                    } else {
+                                      return const Icon(Icons.visibility);
+                                    }
+                                  }
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      showPassword = !showPassword;
+                                    });
+                                  },
+                                ),
+                                ...widget.suffixIcon ?? [],
+                              ],
                             ),
-                            backgroundColor: Theme.of(context).primaryColor,
+                            prefixIcon: const Icon(Icons.lock),
+                            labelText: "Password",
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintStyle: TextStyle(
+                                color: Theme.of(context).primaryColor)),
+                        obscureText: !showPassword,
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Home(),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
                           ),
-                          child: const Text(
-                            "sign in",
-                            style: TextStyle(color: Colors.white),
-                          ),
+                          backgroundColor: Theme.of(context).primaryColor,
+                        ),
+                        child: const Text(
+                          "sign in",
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Don't have an account? ",
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Don't have an account? ",
+                          style: TextStyle(
+                            fontSize: 10,
+                          ),
+                        ),
+                        TextButton(
+                          child: const Text(
+                            "Sign Up",
                             style: TextStyle(
                               fontSize: 10,
                             ),
                           ),
-                          TextButton(
-                            child: const Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                fontSize: 10,
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Register(),
                               ),
-                            ),
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Register(),
-                                ),
-                              );
-                            },
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                            );
+                          },
+                        ),
+                      ],
+                    )
+                  ],
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

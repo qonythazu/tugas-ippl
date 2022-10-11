@@ -27,19 +27,21 @@ class _PesananReguler3State extends State<PesananReguler3> {
           iconTheme: IconThemeData(color: Theme.of(context).primaryColor)),
       body: Center(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24.0),
+          margin: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(children: [
             Expanded(
                 child: ListView(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(
-                    "Kain",
-                    style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(
+                      "Kain",
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w400),
+                    ),
                   ),
                 ),
                 ListTile(
@@ -78,12 +80,12 @@ class _PesananReguler3State extends State<PesananReguler3> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("Panjang"),
+                    Text("Panjang", style: TextStyle(color: Theme.of(context).primaryColor, fontFamily: "Montserrat", fontSize: 16),),
                     Container(
                       width: MediaQuery.of(context).size.width / 2,
                       child: Slider(
                         min: 1,
-                        max: 5,
+                        max: 10,
                         value: double.tryParse(panjangKain.text) ?? 1,
                         onChanged: (val) {
                           setState(() {
@@ -117,7 +119,7 @@ class _PesananReguler3State extends State<PesananReguler3> {
                   child: const Text("save"),
                 ),
                 style: ElevatedButton.styleFrom(
-                    shape: new RoundedRectangleBorder(
+                    shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0)),
                     backgroundColor: Theme.of(context).primaryColor),
               ),
@@ -145,8 +147,8 @@ class _DropdownButtonExampleState extends State<KainList> {
       value: dropdownValue,
       icon: const Icon(Icons.arrow_drop_down),
       elevation: 16,
-      style:
-          TextStyle(color: Theme.of(context).primaryColor, fontFamily: "Montserrat"),
+      style: TextStyle(
+          color: Theme.of(context).primaryColor, fontFamily: "Montserrat", fontSize: 16),
       underline: Container(
         height: 2,
         color: Theme.of(context).primaryColor,

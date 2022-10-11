@@ -25,19 +25,21 @@ class _PesananReguler2State extends State<PesananReguler2> {
         ),
         body: Center(
           child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 24.0),
+              margin: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(children: [
                 Expanded(
                   child: ListView(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          "Kemeja",
-                          style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            "Kemeja",
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400),
+                          ),
                         ),
                       ),
                       Padding(

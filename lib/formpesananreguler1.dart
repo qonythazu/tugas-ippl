@@ -33,20 +33,22 @@ class _PesananReguler1State extends State<PesananReguler1> {
       ),
       body: Center(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24.0),
+          margin: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: [
               Expanded(
                 child: ListView(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        "Form Pemesanan",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          "Form Pemesanan",
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400),
+                        ),
                       ),
                     ),
                     Padding(
@@ -60,7 +62,11 @@ class _PesananReguler1State extends State<PesananReguler1> {
                             fillColor: Colors.white,
                             hintText: "Rahman",
                             hintStyle:
-                                TextStyle(color: Theme.of(context).primaryColor)),
+                                TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 16
+                                )
+                        ),
                       ),
                     ),
                     Padding(
@@ -78,7 +84,10 @@ class _PesananReguler1State extends State<PesananReguler1> {
                             fillColor: Colors.white,
                             hintText: "08xxxx",
                             hintStyle:
-                                TextStyle(color: Theme.of(context).primaryColor)),
+                                TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 16
+                                )),
                       ),
                     ),
                     Column(
@@ -89,7 +98,8 @@ class _PesananReguler1State extends State<PesananReguler1> {
                             "Kategori",
                             style: TextStyle(
                                 color: Theme.of(context).primaryColor,
-                                fontSize: 16),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                         ListTile(
@@ -138,7 +148,7 @@ class _PesananReguler1State extends State<PesananReguler1> {
                     child: const Text("next"),
                   ),
                   style: ElevatedButton.styleFrom(
-                      shape: new RoundedRectangleBorder(
+                      shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0)),
                       backgroundColor: Theme.of(context).primaryColor),
                 ),
@@ -168,7 +178,7 @@ class _DropdownButtonExampleState extends State<Jasa> {
       icon: const Icon(Icons.arrow_drop_down),
       elevation: 16,
       style: TextStyle(
-          color: Theme.of(context).primaryColor, fontFamily: "Montserrat"),
+          color: Theme.of(context).primaryColor, fontFamily: "Montserrat", fontSize: 16),
       underline: Container(
         height: 2,
         color: Theme.of(context).primaryColor,

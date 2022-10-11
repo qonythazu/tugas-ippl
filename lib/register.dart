@@ -7,7 +7,8 @@ import 'package:sewnotes/login.dart';
 import 'package:sewnotes/home.dart';
 
 class Register extends StatefulWidget {
-  const Register({super.key});
+  const Register({super.key, this.suffixIcon});
+  final List<Widget>? suffixIcon;
 
   @override
   State<Register> createState() => _RegisterState();
@@ -17,6 +18,7 @@ class _RegisterState extends State<Register> {
   var emailregis = TextEditingController();
   var passwordregis = TextEditingController();
   var confirmpasswordregis = TextEditingController();
+  bool showPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class _RegisterState extends State<Register> {
                             hintStyle: TextStyle(
                                 color: Theme.of(context).primaryColor)),
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                     ),
@@ -75,14 +77,35 @@ class _RegisterState extends State<Register> {
                           }
                           return "Input your password coy!";
                         },
-                        obscureText: true,
                         decoration: InputDecoration(
+                            suffixIcon: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Builder(builder: (context){
+                                    if (showPassword) {
+                                      return const Icon(Icons.visibility_off);
+                                    } else {
+                                      return const Icon(Icons.visibility);
+                                    }
+                                  }
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      showPassword = !showPassword;
+                                    });
+                                  },
+                                ),
+                                ...widget.suffixIcon ?? [],
+                              ],
+                            ),
                             prefixIcon: const Icon(Icons.lock),
                             labelText: "Password",
                             filled: true,
                             fillColor: Colors.white,
                             hintStyle: TextStyle(
                                 color: Theme.of(context).primaryColor)),
+                        obscureText: !showPassword,
                         style: TextStyle(color: Theme.of(context).primaryColor),
                       ),
                     ),
@@ -96,14 +119,35 @@ class _RegisterState extends State<Register> {
                           }
                           return "Input your password coy!";
                         },
-                        obscureText: true,
                         decoration: InputDecoration(
+                            suffixIcon: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Builder(builder: (context){
+                                    if (showPassword) {
+                                      return const Icon(Icons.visibility_off);
+                                    } else {
+                                      return const Icon(Icons.visibility);
+                                    }
+                                  }
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      showPassword = !showPassword;
+                                    });
+                                  },
+                                ),
+                                ...widget.suffixIcon ?? [],
+                              ],
+                            ),
                             prefixIcon: const Icon(Icons.lock),
                             labelText: "Password",
                             filled: true,
                             fillColor: Colors.white,
                             hintStyle: TextStyle(
                                 color: Theme.of(context).primaryColor)),
+                        obscureText: !showPassword,
                         style: TextStyle(color: Theme.of(context).primaryColor),
                       ),
                     ),

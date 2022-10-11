@@ -27,8 +27,8 @@ class _KainPageState extends State<KainPage> {
             "Kain",
             style: TextStyle(
                 color: Theme.of(context).primaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600),
+                fontSize: 24,
+                fontWeight: FontWeight.w400),
           ),
         ),
         Row(
@@ -39,10 +39,8 @@ class _KainPageState extends State<KainPage> {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const AddKain()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const AddKain()));
                 },
                 icon: Icon(
                   Icons.add,
@@ -58,8 +56,8 @@ class _KainPageState extends State<KainPage> {
           ],
         ),
         Container(
-          decoration:
-              BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
+          decoration: BoxDecoration(
+              border: Border.all(color: Theme.of(context).primaryColor)),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -74,7 +72,8 @@ class _KainPageState extends State<KainPage> {
                 Spacer(),
                 Text(
                   "30k/meter",
-                  style: TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
+                  style: TextStyle(
+                      fontSize: 16, color: Theme.of(context).primaryColor),
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -97,8 +96,8 @@ class _KainPageState extends State<KainPage> {
           ),
         ),
         Container(
-          decoration:
-              BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
+          decoration: BoxDecoration(
+              border: Border.all(color: Theme.of(context).primaryColor)),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -113,7 +112,8 @@ class _KainPageState extends State<KainPage> {
                 Spacer(),
                 Text(
                   "30k/meter",
-                  style: TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
+                  style: TextStyle(
+                      fontSize: 16, color: Theme.of(context).primaryColor),
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(

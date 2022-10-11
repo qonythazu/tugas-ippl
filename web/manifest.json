@@ -1,6 +1,6 @@
 {
-    "name": "anuy",
-    "short_name": "anuy",
+    "name": "SewNotes",
+    "short_name": "SewNotes",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

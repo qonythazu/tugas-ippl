@@ -29,13 +29,13 @@ class _KustomState extends State<Kustom> {
                 "Kustomisasi",
                 style: TextStyle(
                     color: Theme.of(context).primaryColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400),
               ),
             ),
             Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -56,7 +56,8 @@ class _KustomState extends State<Kustom> {
                         ),
                         Text("Produk",
                             style: TextStyle(
-                                color: Theme.of(context).primaryColor, fontSize: 16)),
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 16)),
                         Spacer(),
                         Icon(
                           Icons.chevron_right,
@@ -67,8 +68,8 @@ class _KustomState extends State<Kustom> {
                   )),
             ),
             Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -89,8 +90,9 @@ class _KustomState extends State<Kustom> {
                         ),
                         Text(
                           "Kain",
-                          style:
-                              TextStyle(color: Theme.of(context).primaryColor, fontSize: 16),
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 16),
                         ),
                         Spacer(),
                         Icon(

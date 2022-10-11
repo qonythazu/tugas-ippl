@@ -32,9 +32,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text(""),
-          backgroundColor: Colors.transparent,
-          elevation: 0,),
+        title: const Text(""),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -44,7 +45,10 @@ class _HomeState extends State<Home> {
             ),
           );
         },
-        child: const Icon(Icons.add, color: Color(0xffDFCDC3),),
+        child: const Icon(
+          Icons.add,
+          color: Color(0xffDFCDC3),
+        ),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
@@ -96,37 +100,35 @@ class _PemasukkanScreenState extends State<PemasukkanScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Center(
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor
-                ),
-                child: ToggleButton(
-                  width: 300.0,
-                  height: 30.0,
-                  toggleBackgroundColor: Theme.of(context).primaryColor,
-                  toggleBorderColor: Color(0xffDFCDC3),
-                  toggleColor: Color(0xffDFCDC3),
-                  activeTextColor: Theme.of(context).primaryColor,
-                  inactiveTextColor: Color(0xffDFCDC3),
-                  leftDescription: 'Mingguan',
-                  rightDescription: 'Bulanan',
-                  onLeftToggleActive: () {
-                    _onItemTappedPemasukkan(0);
-                  },
-                  onRightToggleActive: () {
-                    _onItemTappedPemasukkan(1);
-                  },
-                ),
+      child: Center(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(16.0),
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+              child: ToggleButton(
+                width: 300.0,
+                height: 30.0,
+                toggleBackgroundColor: Theme.of(context).primaryColor,
+                toggleBorderColor: Color(0xffDFCDC3),
+                toggleColor: Color(0xffDFCDC3),
+                activeTextColor: Theme.of(context).primaryColor,
+                inactiveTextColor: Color(0xffDFCDC3),
+                leftDescription: 'Mingguan',
+                rightDescription: 'Bulanan',
+                onLeftToggleActive: () {
+                  _onItemTappedPemasukkan(0);
+                },
+                onRightToggleActive: () {
+                  _onItemTappedPemasukkan(1);
+                },
               ),
-              _widgetOptionsPemasukkan.elementAt(_selectedIndexPemasukkan),
-            ],
-          ),
+            ),
+            _widgetOptionsPemasukkan.elementAt(_selectedIndexPemasukkan),
+          ],
         ),
+      ),
     );
   }
 }
@@ -140,46 +142,36 @@ class PemasukkanMingguanScreen extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 100,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor
-            ),
-            child: Center(
-              child: Text(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+              child: Center(
+                  child: Text(
                 "Rp 550,000",
                 style: TextStyle(
-                  color: Color(0xffDFCDC3),
-                  fontSize: 32,
-                  fontWeight: FontWeight.w800
-                ),
-              )
-            )
-          ),
+                    color: Color(0xffDFCDC3),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w800),
+              ))),
           Container(
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Kemeja",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 150,000",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -188,26 +180,21 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Kemeja",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 100,000",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -216,26 +203,21 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Celana",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 150,000",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -244,26 +226,21 @@ class PemasukkanMingguanScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Celana",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 150,000",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -283,46 +260,36 @@ class PemasukkanBulananScreen extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 100,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor
-            ),
-            child: Center(
-              child: Text(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+              child: Center(
+                  child: Text(
                 "Rp 1,550,000",
                 style: TextStyle(
-                  color: Color(0xffDFCDC3),
-                  fontSize: 32,
-                  fontWeight: FontWeight.w800
-                ),
-              )
-            )
-          ),
+                    color: Color(0xffDFCDC3),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w800),
+              ))),
           Container(
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Minggu 1",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 750,000",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -331,26 +298,21 @@ class PemasukkanBulananScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Minggu 2",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 250,000",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -359,26 +321,21 @@ class PemasukkanBulananScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Minggu 3",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 550,000",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -387,26 +344,21 @@ class PemasukkanBulananScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(8.0)),
             child: Row(
               children: [
                 Text(
                   "Minggu 4",
                   style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      color: Color(0xffDFCDC3),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Spacer(),
                 Text(
                   "Rp 0",
-                  style: TextStyle(
-                    color: Color(0xffDFCDC3),
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Color(0xffDFCDC3), fontSize: 16),
                 )
               ],
             ),
@@ -562,21 +514,19 @@ class PengaturanScreen extends StatelessWidget {
                 "Pengaturan",
                 style: TextStyle(
                     color: Theme.of(context).primaryColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400),
               ),
             ),
             Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Kustom()
-                      )
-                    );
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Kustom()));
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -591,7 +541,8 @@ class PengaturanScreen extends StatelessWidget {
                         ),
                         Text("Kustomisasi",
                             style: TextStyle(
-                                color: Theme.of(context).primaryColor, fontSize: 16)),
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 16)),
                         Spacer(),
                         Icon(
                           Icons.chevron_right,
@@ -602,8 +553,8 @@ class PengaturanScreen extends StatelessWidget {
                   )),
             ),
             Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -619,8 +570,9 @@ class PengaturanScreen extends StatelessWidget {
                         ),
                         Text(
                           "Email & Password",
-                          style:
-                              TextStyle(color: Theme.of(context).primaryColor, fontSize: 16),
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 16),
                         ),
                         Spacer(),
                         Icon(
@@ -632,8 +584,8 @@ class PengaturanScreen extends StatelessWidget {
                   )),
             ),
             Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor)),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Theme.of(context).primaryColor)),
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -649,7 +601,8 @@ class PengaturanScreen extends StatelessWidget {
                         ),
                         Text("Logout",
                             style: TextStyle(
-                                color: Theme.of(context).primaryColor, fontSize: 16)),
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 16)),
                       ],
                     ),
                   )),
@@ -668,22 +621,20 @@ class Notes extends StatelessWidget {
   final String noHp;
   final int warna;
 
-  const Notes(
-      {Key? key,
-      required this.idPesanan,
-      required this.user,
-      required this.kerjaan,
-      required this.noHp,
-      required this.warna,
-      })
-      : super(key: key);
+  const Notes({
+    Key? key,
+    required this.idPesanan,
+    required this.user,
+    required this.kerjaan,
+    required this.noHp,
+    required this.warna,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.0),
       child: ElevatedButton(
-        
         onPressed: () {
           Navigator.push(
             context,
@@ -698,21 +649,20 @@ class Notes extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(user, style: TextStyle(color: Theme.of(context).primaryColor)),
-              Text(kerjaan, style: TextStyle(color: Theme.of(context).primaryColor)),
-              Text(noHp, style: TextStyle(color: Theme.of(context).primaryColor)),
+              Text(user,
+                  style: TextStyle(color: Theme.of(context).primaryColor)),
+              Text(kerjaan,
+                  style: TextStyle(color: Theme.of(context).primaryColor)),
+              Text(noHp,
+                  style: TextStyle(color: Theme.of(context).primaryColor)),
             ],
           ),
         ),
         style: ElevatedButton.styleFrom(
-            
             backgroundColor: Color(warna),
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(8.0),
-                side: BorderSide(
-                  color: Theme.of(context).primaryColor
-                )
-                )),
+                side: BorderSide(color: Theme.of(context).primaryColor))),
       ),
     );
   }

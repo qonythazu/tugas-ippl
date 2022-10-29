@@ -3,6 +3,9 @@ import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:progress_dialog_null_safe/progress_dialog_null_safe.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:http/http.dart' as http;
 import 'package:sewnotes/register.dart';
 import 'package:sewnotes/home.dart';
 
@@ -115,6 +118,7 @@ class _LoginState extends State<Login> {
                       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                       child: ElevatedButton(
                         onPressed: () {
+                          // loginFunc();
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
@@ -170,4 +174,41 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+
+  loginFunc() async {
+    if(emaillogin.text.isEmpty || passwordlogin.text.isEmpty){
+      Alert(
+        context: context, 
+        title: "Data tidak diisi dengan benar",
+        type: AlertType.error
+      ).show();
+      return;
+    }
+    ProgressDialog progressDialog = ProgressDialog(context);
+    progressDialog.style(message: 'Loading...');
+    progressDialog.show();
+    var url = Uri.http('192.168.1.19', 'sewnotes/user');
+    var response = await http.post(
+      url, 
+      body: {
+        'email': emaillogin.text, 
+        'password': passwordlogin.text
+      }
+    );
+    progressDialog.hide();
+    if(response.statusCode == 200) {
+      Alert(
+        context: context,
+        title: "Login Berhasil",
+        type: AlertType.success
+      ).show();
+    }else{
+      Alert(
+        context: context,
+        title: "Login Gagal",
+        type: AlertType.error
+      ).show();
+    }
+  }
+
 }

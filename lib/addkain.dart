@@ -1,6 +1,28 @@
+import 'dart:convert';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:http/http.dart' as http;
+import 'package:rflutter_alert/rflutter_alert.dart';
+
+addKainFunc(String nama_kain, String harga_kain) async {
+  var url = Uri.http('192.168.1.19', 'sewnotes/kain');
+  var response =
+      await http.post(url, body: {
+        'id_user' : 1,
+        'nama kain' : nama_kain,
+        'harga_kain' : harga_kain
+      });
+  Map result = jsonDecode(response.body);
+
+  if (result['status'] == 1) {
+    return "True";
+  } else {
+    return "False";
+  }
+}
 
 class AddKain extends StatefulWidget {
   const AddKain({super.key});
@@ -52,7 +74,7 @@ class _AddKainState extends State<AddKain> {
                           labelText: "Harga",
                           filled: true,
                           fillColor: Colors.white,
-                          hintText: "30k",
+                          hintText: "30000",
                           hintStyle:
                               TextStyle(color: Theme.of(context).primaryColor)),
                     ),
@@ -62,7 +84,27 @@ class _AddKainState extends State<AddKain> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 16.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    if(nama.text.isNotEmpty || price.text.isNotEmpty) {
+                      var result = await addKainFunc(nama.text, price.text);
+
+                      if(result == "True") {
+                        Alert(
+                          context: context,
+                          title: "Berhasil Menambah Kain",
+                          type: AlertType.success)
+                        .show();
+                      } else if(result == "False") {
+                        Alert(
+                          context: context,
+                          title: "Gagal Menambah Kain",
+                          type: AlertType.error)
+                        .show();
+                      } 
+                    } else {
+                      print("Monki");
+                    }
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: const Text("add"),

@@ -198,8 +198,7 @@ class _RegisterState extends State<Register> {
                                   type: AlertType.error)
                               .show();
                           }
-                        } else if (passwordregis.text !=
-                            confirmpasswordregis.text) {
+                        } else if (passwordregis.text != confirmpasswordregis.text) {
                               Alert(
                                   context: context,
                                   title: "Password Doesn't Match",

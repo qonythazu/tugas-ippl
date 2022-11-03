@@ -118,13 +118,13 @@ class _LoginState extends State<Login> {
                       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                       child: ElevatedButton(
                         onPressed: () {
-                          loginFunc();
-                          // Navigator.pushReplacement(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const Home(),
-                          //   ),
-                          // );
+                          // loginFunc();
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Home(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(

@@ -1,6 +1,26 @@
+import 'dart:convert';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:http/http.dart' as http;
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'globals.dart' as globals;
+
+
+addProdukFunc(String nama_jasa, String harga_dewasa, String harga_anak) async {
+  var url = Uri.http(globals.apiURL, 'sewnotes/jasa');
+  var response = await http.post(url,
+      body: {'id_user': '1', 'nama_jasa': nama_jasa, 'harga_dewasa': harga_dewasa, 'harga_anak': harga_anak});
+  Map result = jsonDecode(response.body);
+
+  if (result['status'] == 1) {
+    return "True";
+  } else {
+    return "False";
+  }
+}
 
 class AddProduk extends StatefulWidget {
   const AddProduk({super.key});
@@ -54,7 +74,7 @@ class _AddProdukState extends State<AddProduk> {
                             labelText: "Harga untuk Dewasa",
                             filled: true,
                             fillColor: Colors.white,
-                            hintText: "40k",
+                            hintText: "40000",
                             hintStyle: TextStyle(
                                 color: Theme.of(context).primaryColor)),
                     ),
@@ -68,7 +88,7 @@ class _AddProdukState extends State<AddProduk> {
                             labelText: "Harga untuk Anak-anak",
                             filled: true,
                             fillColor: Colors.white,
-                            hintText: "20k",
+                            hintText: "20000",
                             hintStyle: TextStyle(
                                 color: Theme.of(context).primaryColor)),
                     ),
@@ -114,7 +134,27 @@ class _AddProdukState extends State<AddProduk> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 16.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    if (nama.text.isNotEmpty || adult.text.isNotEmpty || kids.text.isNotEmpty) {
+                      var result = await addProdukFunc(nama.text, adult.text, kids.text);
+
+                      if (result == "True") {
+                        Alert(
+                          context: context,
+                          title: "Berhasil Menambah Produk",
+                          type: AlertType.success
+                        ).show();
+                      } else if (result == "False") {
+                        Alert(
+                          context: context,
+                          title: "Gagal Menambah Produk",
+                          type: AlertType.error
+                        ).show();
+                      }
+                    } else {
+                      print("Monki");
+                    }
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: const Text("add"),

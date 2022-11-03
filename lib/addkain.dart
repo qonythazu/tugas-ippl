@@ -6,15 +6,12 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'globals.dart' as globals;
 
 addKainFunc(String nama_kain, String harga_kain) async {
-  var url = Uri.http('192.168.1.19', 'sewnotes/kain');
-  var response =
-      await http.post(url, body: {
-        'id_user' : 1,
-        'nama kain' : nama_kain,
-        'harga_kain' : harga_kain
-      });
+  var url = Uri.http(globals.apiURL, 'sewnotes/kain');
+  var response = await http.post(url,
+      body: {'id_user': '1', 'nama_kain': nama_kain, 'harga_kain': harga_kain});
   Map result = jsonDecode(response.body);
 
   if (result['status'] == 1) {
@@ -85,22 +82,22 @@ class _AddKainState extends State<AddKain> {
                 padding: const EdgeInsets.only(bottom: 16.0),
                 child: ElevatedButton(
                   onPressed: () async {
-                    if(nama.text.isNotEmpty || price.text.isNotEmpty) {
+                    if (nama.text.isNotEmpty || price.text.isNotEmpty) {
                       var result = await addKainFunc(nama.text, price.text);
 
-                      if(result == "True") {
+                      if (result == "True") {
                         Alert(
-                          context: context,
-                          title: "Berhasil Menambah Kain",
-                          type: AlertType.success)
-                        .show();
-                      } else if(result == "False") {
+                                context: context,
+                                title: "Berhasil Menambah Kain",
+                                type: AlertType.success)
+                            .show();
+                      } else if (result == "False") {
                         Alert(
-                          context: context,
-                          title: "Gagal Menambah Kain",
-                          type: AlertType.error)
-                        .show();
-                      } 
+                                context: context,
+                                title: "Gagal Menambah Kain",
+                                type: AlertType.error)
+                            .show();
+                      }
                     } else {
                       print("Monki");
                     }

@@ -10,9 +10,11 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sewnotes/login.dart';
 import 'package:sewnotes/home.dart';
 import 'package:http/http.dart' as http;
+import 'globals.dart' as globals;
+
 
 registerFunc(String email, String password) async {
-  var url = Uri.http('192.168.1.19', 'sewnotes/user');
+  var url = Uri.http(globals.apiURL, 'sewnotes/user');
   var response =
       await http.post(url, body: {'email': email, 'password': password});
   Map result = json.decode(response.body);

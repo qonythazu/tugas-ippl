@@ -7,15 +7,45 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 import 'globals.dart' as globals;
 
-getKain(String id_user) async {
-  var url = Uri.http(globals.apiURL, 'sewnotes/kain/user/$id_user');
-  var response = await http.get(url);
-  Map result = jsonDecode(response.body);
+Future<Kain> getKain(String id_user) async {
+  // var url = Uri.http(globals.apiURL, 'sewnotes/kain/user/$id_user');
+  // var response = await http.get(url);
+  // Map result = jsonDecode(response.body);
 
-  if (result['status'] == 1 && (result['data'].length > 0)) {
-    return result['data'];
+  // if (result['status'] == 1 && (result['data'].length > 0)) {
+  //   return result['data'];
+  // } else {
+  //   throw Exception("Failed to get data");
+  // }
+  final response = await http.get(Uri.parse(globals.apiURL + 'sewnotes/kain/user/$id_user'));
+
+  if (response.statusCode == 200) {
+    return Kain.fromJson(jsonDecode(response.body));
   } else {
-    return "False";
+    throw Exception("Failed to load data");
+  }
+}
+
+class Kain {
+  final int id;
+  final int id_user;
+  final String nama_kain;
+  final int harga_kain;
+
+  const Kain({
+    required this.id,
+    required this.id_user,
+    required this.nama_kain,
+    required this.harga_kain,
+  });
+
+  factory Kain.fromJson(Map<String, dynamic> json) {
+    return Kain(
+      id: json['data']['id'],
+      id_user: json['data']['user_id'],
+      nama_kain: json['data']['nama_kain'],
+      harga_kain: json['data']['nama_kain'],
+    );
   }
 }
 
@@ -27,15 +57,16 @@ class KainPage extends StatefulWidget {
 }
 
 class _KainPageState extends State<KainPage> {
-  var kainData;
+  late Future<Kain> futureKain;
 
   @override
   void initState() {
-    Future.delayed(Duration.zero,() async {
-      kainData = await getKain("1");
-      print(kainData);
-    });
+    // Future.delayed(Duration.zero,() async {
+    //   kainData = await getKain("1");
+    //   print(kainData);
+    // });
     super.initState();
+    futureKain = getKain("1");
     // WidgetsBinding.instance.addPostFrameCallback((_) async {
     //   kainData = await getKain("1");
     //   print(kainData);

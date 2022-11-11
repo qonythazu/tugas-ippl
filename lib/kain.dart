@@ -118,8 +118,8 @@ class _KainPageState extends State<KainPage> {
           ],
         ),
         // ContainerKain(),
-        for (var i = 0; i < kainData.length; i++)
-          ContainerKain(nama_kain: kainData[i]['nama_kain'], harga_kain: kainData[i]['harga_kain'])
+        // for (var i = 0; i < kainData.length; i++)
+        //   ContainerKain(nama_kain: kainData[i]['nama_kain'], harga_kain: kainData[i]['harga_kain'])
       ])),
     );
   }

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,25 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 import 'package:sewnotes/register.dart';
 import 'package:sewnotes/home.dart';
+import 'package:sewnotes/globals.dart' as globals;
+
+Future loginFunc(String email, String password) async {
+    var url = Uri.http(globals.apiURL, 'sewnotes/auth');
+    var response = await http.post(
+      url, 
+      body: {
+        'email': email, 
+        'password': password
+      }
+    );
+    Map result = json.decode(response.body);
+    
+    if (result['ststus'] == 1) {
+      return "True";
+    } else {
+      return "False";
+    }
+  }
 
 class Login extends StatefulWidget {
   const Login({super.key, this.suffixIcon});
@@ -117,14 +138,36 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                       child: ElevatedButton(
-                        onPressed: () {
-                          // loginFunc();
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Home(),
-                            ),
-                          );
+                        onPressed: () async {
+                          if (emaillogin.text.isNotEmpty && passwordlogin.text.isNotEmpty) {
+                            var result = await loginFunc(emaillogin.text, passwordlogin.text);
+
+                            if (result == "True") {
+                              Alert(
+                                  context: context,
+                                  title: "Login Berhasil",
+                                  type: AlertType.success)
+                              .show();
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Home(),
+                                ),
+                              );
+                            } else if (result == "False") {
+                              Alert(
+                                  context: context,
+                                  title: "Login Gagal",
+                                  type: AlertType.error)
+                              .show();
+                            }
+                          }
+                          // Navigator.pushReplacement(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => const Home(),
+                          //   ),
+                          // );
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -175,40 +218,6 @@ class _LoginState extends State<Login> {
     );
   }
 
-  loginFunc() async {
-    if(emaillogin.text.isEmpty || passwordlogin.text.isEmpty){
-      Alert(
-        context: context, 
-        title: "Data tidak diisi dengan benar",
-        type: AlertType.error
-      ).show();
-      return;
-    }
-    ProgressDialog progressDialog = ProgressDialog(context);
-    progressDialog.style(message: 'Loading...');
-    progressDialog.show();
-    var url = Uri.http('192.168.1.19', 'sewnotes/user');
-    var response = await http.post(
-      url, 
-      body: {
-        'email': emaillogin.text, 
-        'password': passwordlogin.text
-      }
-    );
-    progressDialog.hide();
-    if(response.statusCode == 200) {
-      Alert(
-        context: context,
-        title: "Login Berhasil",
-        type: AlertType.success
-      ).show();
-    }else{
-      Alert(
-        context: context,
-        title: "Login Gagal",
-        type: AlertType.error
-      ).show();
-    }
-  }
+  
 
 }

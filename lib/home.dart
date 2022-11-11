@@ -32,8 +32,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(""),
-        backgroundColor: Colors.transparent,
+        title: const Text("SewNotes"),
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(

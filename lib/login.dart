@@ -23,7 +23,7 @@ Future loginFunc(String email, String password) async {
     );
     Map result = json.decode(response.body);
     
-    if (result['ststus'] == 1) {
+    if (result['status'] == 1) {
       return "True";
     } else {
       return "False";
@@ -143,11 +143,6 @@ class _LoginState extends State<Login> {
                             var result = await loginFunc(emaillogin.text, passwordlogin.text);
 
                             if (result == "True") {
-                              Alert(
-                                  context: context,
-                                  title: "Login Berhasil",
-                                  type: AlertType.success)
-                              .show();
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
